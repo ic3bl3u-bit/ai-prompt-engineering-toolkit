@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="social-preview.png" alt="AI Prompt Engineering Toolkit" width="100%">
+
 # AI Prompt Engineering Toolkit
 
 ### 500+ battle-tested AI prompts for business, marketing, development & productivity
