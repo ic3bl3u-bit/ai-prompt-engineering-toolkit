@@ -4,17 +4,17 @@
 
 # AI Prompt Engineering Toolkit
 
-### 500+ battle-tested AI prompts for business, marketing, development & productivity
+### 200+ battle-tested AI prompts for business, marketing, development & productivity
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Prompts](https://img.shields.io/badge/Prompts-500+-blue.svg)](https://streamline501.gumroad.com)
+[![Prompts](https://img.shields.io/badge/Prompts-200+-blue.svg)](https://streamline501.gumroad.com)
 [![Works with ChatGPT](https://img.shields.io/badge/Works%20with-ChatGPT-green.svg)](https://streamline501.gumroad.com)
 [![Works with Claude](https://img.shields.io/badge/Works%20with-Claude-green.svg)](https://streamline501.gumroad.com)
 [![Works with Gemini](https://img.shields.io/badge/Works%20with-Gemini-green.svg)](https://streamline501.gumroad.com)
 
 **Save 10+ hours per week. Get better AI output. Stop guessing at prompts.**
 
-[Get the Full 500+ Prompt Pack →](https://streamline501.gumroad.com/l/complete-ai-toolkit) · [Free Sample →](https://streamline501.gumroad.com/l/free-ai-prompts-sample)
+[Get the Full Prompt Pack →](https://streamline501.gumroad.com/l/complete-ai-toolkit) · [Free Sample →](https://streamline501.gumroad.com/l/free-ai-prompts-sample)
 
 </div>
 
@@ -24,7 +24,7 @@
 
 Most people use AI daily but get mediocre results because they write vague prompts like *"write a blog post"* or *"help me with marketing."* The difference between a good prompt and a great prompt is **10x output quality**.
 
-This toolkit contains **15 free prompts** (below) that demonstrate the structured prompt framework: **Role → Task → Format → Constraints**. The full pack contains **500+ prompts** across 7 categories, organized, tested, and ready to copy-paste.
+This toolkit contains **15 free prompts** (below) that demonstrate the structured prompt framework: **Role → Task → Format → Constraints**. The full collection spans **200+ prompts** across **6 categories**, organized, tested, and ready to copy-paste.
 
 > *"I've gotten more traffic from a README than from YouTube videos."* — common pattern among GitHub-based creators
 
@@ -369,21 +369,46 @@ Constraints:
 
 ---
 
-## Want 500+ More?
+## Want More?
 
-These 15 prompts are samples from the full collection. Get organized, tested prompt packs for every business function:
+These 15 prompts are samples from the full collection. **20 products** across business, marketing, development, and productivity:
 
-| Pack | Prompts | Price |
-|------|---------|-------|
-| Content Strategy | 12 | $19 |
-| Email Marketing | 12 | $19 |
-| Social Media | 12 | $19 |
-| Project Management | 12 | $19 |
-| Sales & Outreach | 12 | $19 |
-| Research & Analysis | 12 | $19 |
-| **Complete Toolkit (all 6)** | **72** | **$79 (save 35%)** |
+### Individual Packs
 
-**Use code `GITHUB20` for 20% off** → [Get the Full Pack](https://streamline501.gumroad.com/l/complete-ai-toolkit)
+| Pack | Price |
+|------|-------|
+| Content Strategy | $19 |
+| Email Marketing | $19 |
+| Social Media Content (110+) | $19 |
+| Project Management | $19 |
+| Sales & Outreach | $19 |
+| Research & Analysis | $19 |
+| Social Media Strategy | $19 |
+| Crypto Trader | $19 |
+| LinkedIn Growth | $19 |
+| AI Image Generation | $24 |
+| Notion Template | $24 |
+| Etsy / Shopify Seller | $24 |
+| Freelance Business | $29 |
+| 50 Premium Automation Prompts | $29 |
+
+### Bundles & Team
+
+| Product | Price | Value |
+|---------|-------|-------|
+| Marketing Bundle (3 packs) | $47 | Save $10 |
+| Operations Bundle (3 packs) | $47 | Save $10 |
+| Complete AI Toolkit (6 packs) | $79 | Save $35 |
+| **Ultimate Launch Bundle (all 15)** | **$97** | **$301 value (68% off)** |
+| Team License (5 seats) | $149 | For agencies & teams |
+
+**Coupon codes:**
+- `GITHUB20` — 20% off (for GitHub users)
+- `LAUNCH20` — 20% off (launch special)
+- `EARLYBIRD` — $10 off any pack
+- `ULTIMATE50` — 50% off Ultimate Bundle
+
+→ [Browse All Products](https://streamline501.gumroad.com) · [Free Sample](https://streamline501.gumroad.com/l/free-ai-prompts-sample)
 
 Every pack includes:
 - PDF + plain text .txt file for easy copy-paste
@@ -427,7 +452,7 @@ MIT License — use these prompts personally, commercially, however you want. At
 
 <div align="center">
 
-**[Get 500+ Premium Prompts](https://streamline501.gumroad.com/l/complete-ai-toolkit)** · **[Free Sample Pack](https://streamline501.gumroad.com/l/free-ai-prompts-sample)** · **[All Products](https://streamline501.gumroad.com)**
+**[Get Premium Prompts](https://streamline501.gumroad.com/l/complete-ai-toolkit)** · **[Free Sample Pack](https://streamline501.gumroad.com/l/free-ai-prompts-sample)** · **[All Products](https://streamline501.gumroad.com)**
 
 Made by [Streamline AI](https://streamline501.gumroad.com)
 

@@ -45,7 +45,7 @@ Thanks for your interest in contributing! Quality prompts help everyone.
 
 ## Code of Conduct
 
-Be respectful. No spam. No promotional content in prompts (the Gumroad links are in the README only).
+Be respectful. No spam. No promotional content in prompts (product links are in the README and category prompt files).
 
 ## Questions?
 

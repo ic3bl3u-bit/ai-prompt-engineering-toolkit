@@ -18,4 +18,6 @@ See [README.md](../README.md) for the full prompts.
 - [Freelance Business Prompts](https://streamline501.gumroad.com/l/freelance-business-prompts) — $29
 - [Notion Template Prompts](https://streamline501.gumroad.com/l/notion-template-prompts) — $24
 
-[Get the Complete AI Toolkit →](https://streamline501.gumroad.com/l/complete-ai-toolkit)
+[Get the Complete AI Toolkit →](https://streamline501.gumroad.com/l/complete-ai-toolkit) — $79
+
+Use code `GITHUB20` for 20% off.

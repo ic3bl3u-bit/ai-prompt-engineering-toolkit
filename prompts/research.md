@@ -17,4 +17,6 @@ See [README.md](../README.md) for the full prompts.
 - [Research & Analysis Prompts](https://streamline501.gumroad.com/l/research-analysis-prompts) — $19
 - [Sales & Outreach Prompts](https://streamline501.gumroad.com/l/sales-outreach-prompts) — $19
 
-[Get the Operations Bundle →](https://streamline501.gumroad.com/l/operations-bundle) — $47 (save 17%)
+[Get the Operations Bundle →](https://streamline501.gumroad.com/l/operations-bundle) — $47
+
+Use code `GITHUB20` for 20% off.
