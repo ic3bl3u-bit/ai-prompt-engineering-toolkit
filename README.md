@@ -4,7 +4,7 @@
 
 # AI Prompt Engineering Toolkit
 
-### 200+ battle-tested AI prompts for business, marketing, development & productivity
+### 200+ battle-tested prompts that save professionals 10+ hours per week
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Prompts](https://img.shields.io/badge/Prompts-200+-blue.svg)](https://streamline501.gumroad.com)
@@ -12,21 +12,21 @@
 [![Works with Claude](https://img.shields.io/badge/Works%20with-Claude-green.svg)](https://streamline501.gumroad.com)
 [![Works with Gemini](https://img.shields.io/badge/Works%20with-Gemini-green.svg)](https://streamline501.gumroad.com)
 
-**Save 10+ hours per week. Get better AI output. Stop guessing at prompts.**
+**Stop guessing at prompts. Start getting 10x better output from every AI conversation.**
 
-[Get the Full Prompt Pack →](https://streamline501.gumroad.com/l/complete-ai-toolkit) · [Free Sample →](https://streamline501.gumroad.com/l/free-ai-prompts-sample)
+[Get the Full Collection →](https://streamline501.gumroad.com/l/complete-ai-toolkit) · [Free Sample →](https://streamline501.gumroad.com/l/free-ai-prompts-sample)
 
 </div>
 
 ---
 
-## Why This Exists
+## Why This Toolkit Exists
 
-Most people use AI daily but get mediocre results because they write vague prompts like *"write a blog post"* or *"help me with marketing."* The difference between a good prompt and a great prompt is **10x output quality**.
+Most people write prompts like *"write a blog post"* or *"help me with marketing"* — and get generic, mediocre output. The difference between a bad prompt and a great one isn't talent. It's **structure**.
 
-This toolkit contains **15 free prompts** (below) that demonstrate the structured prompt framework: **Role → Task → Format → Constraints**. The full collection spans **200+ prompts** across **6 categories**, organized, tested, and ready to copy-paste.
+This toolkit uses the **RTFC Framework** (Role → Task → Format → Constraints) across every prompt. The result: AI output that's specific, actionable, and ready to use — no rewriting required.
 
-> *"I've gotten more traffic from a README than from YouTube videos."* — common pattern among GitHub-based creators
+**15 free prompts below. 200+ in the full collection.**
 
 ---
 
@@ -34,10 +34,10 @@ This toolkit contains **15 free prompts** (below) that demonstrate the structure
 
 1. Pick any prompt below
 2. Copy it
-3. Paste into ChatGPT, Claude, Gemini, or any AI chatbot
+3. Paste into ChatGPT, Claude, Gemini, or any AI
 4. Replace the `[bracketed text]` with your details
 
-That's it. No setup, no dependencies, no technical skills required.
+No setup. No dependencies. No technical skills required.
 
 ---
 
@@ -369,30 +369,43 @@ Constraints:
 
 ---
 
-## Want More?
+## The RTFC Framework
 
-These 15 prompts are samples from the full collection. **20 products** across business, marketing, development, and productivity:
+Every prompt in this toolkit follows the same structure:
 
-### Individual Packs
+| Element | Purpose | Example |
+|---------|---------|---------|
+| **R**ole | Tells the AI what expert to be | "You are a senior marketing strategist" |
+| **T**ask | Specifies the exact output | "Create a 7-day campaign" |
+| **F**ormat | Defines the structure | "Table with columns: Day, Channel, Message" |
+| **C**onstraints | Sets boundaries | "Budget: $500, no jargon, under 200 words" |
 
-| Pack | Price |
-|------|-------|
-| Content Strategy | $19 |
-| Email Marketing | $19 |
-| Social Media Content (110+) | $19 |
-| Project Management | $19 |
-| Sales & Outreach | $19 |
-| Research & Analysis | $19 |
-| Social Media Strategy | $19 |
-| Crypto Trader | $19 |
-| LinkedIn Growth | $19 |
-| AI Image Generation | $24 |
-| Notion Template | $24 |
-| Etsy / Shopify Seller | $24 |
-| Freelance Business | $29 |
-| 50 Premium Automation Prompts | $29 |
+This framework alone will **3x your AI output quality** compared to vague prompting. Every prompt above uses it. Every prompt in the paid collection uses it. Once you internalize RTFC, you'll never write a bad prompt again.
 
-### Bundles & Team
+---
+
+## Premium Collection
+
+These 15 prompts are samples. The full toolkit includes **200+ prompts across 6 categories**:
+
+| Pack | Prompts | Price |
+|------|---------|-------|
+| Content Strategy | 12 | $19 |
+| Email Marketing | 12 | $19 |
+| Social Media (110+) | 110+ | $19 |
+| Project Management | 12 | $19 |
+| Sales & Outreach | 12 | $19 |
+| Research & Analysis | 12 | $19 |
+| Social Media Strategy | 12 | $19 |
+| Crypto Trader | 12 | $19 |
+| LinkedIn Growth | 12 | $19 |
+| AI Image Generation | 12 | $24 |
+| Notion Templates | 12 | $24 |
+| Etsy / Shopify Seller | 12 | $24 |
+| Freelance Business | 12 | $29 |
+| Premium AI Prompts (50) | 50 | $29 |
+
+**Bundles:**
 
 | Product | Price | Value |
 |---------|-------|-------|
@@ -402,45 +415,15 @@ These 15 prompts are samples from the full collection. **20 products** across bu
 | **Ultimate Launch Bundle (all 15)** | **$97** | **$301 value (68% off)** |
 | Team License (5 seats) | $149 | For agencies & teams |
 
-**Coupon codes:**
-- `GITHUB20` — 20% off (for GitHub users)
-- `LAUNCH20` — 20% off (launch special)
-- `EARLYBIRD` — $10 off any pack
-- `ULTIMATE50` — 50% off Ultimate Bundle
+**GitHub users get 20% off with code `GITHUB20`.**
 
-→ [Browse All Products](https://streamline501.gumroad.com) · [Free Sample](https://streamline501.gumroad.com/l/free-ai-prompts-sample)
+Every pack includes PDF + plain text, quick-start guide, lifetime updates, and commercial use license.
 
-Every pack includes:
-- PDF + plain text .txt file for easy copy-paste
-- Quick-start guide
-- Lifetime updates (new prompts added free)
-- Commercial use license
+→ [Browse All Products](https://streamline501.gumroad.com)
 
 ---
 
-## How to Use These Prompts
-
-1. **Copy** any prompt above
-2. **Paste** into your AI tool (ChatGPT, Claude, Gemini, etc.)
-3. **Replace** everything in `[brackets]` with your specific details
-4. **Iterate** — if the output isn't perfect, add more constraints
-
-### The Framework Behind Every Prompt
-
-Every prompt in this toolkit follows the **RTFC Framework**:
-
-| Element | Purpose | Example |
-|---------|---------|---------|
-| **R**ole | Tells the AI what expert to be | "You are a senior marketing strategist" |
-| **T**ask | Specifies the exact output | "Create a 7-day campaign" |
-| **F**ormat | Defines the structure | "Table with columns: Day, Channel, Message" |
-| **C**onstraints | Sets boundaries | "Budget: $500, no jargon, under 200 words" |
-
-This framework alone will **3x your AI output quality** compared to vague prompting.
-
----
-
-## Contributing
+## How to Contribute
 
 Found a great prompt? Submit a PR! See [CONTRIBUTING.md](CONTRIBUTING.md).
 
@@ -454,6 +437,6 @@ MIT License — use these prompts personally, commercially, however you want. At
 
 **[Get Premium Prompts](https://streamline501.gumroad.com/l/complete-ai-toolkit)** · **[Free Sample Pack](https://streamline501.gumroad.com/l/free-ai-prompts-sample)** · **[All Products](https://streamline501.gumroad.com)**
 
-Made by [Streamline AI](https://streamline501.gumroad.com)
+Built by [Streamline AI](https://streamline501.gumroad.com) · [Follow on GitHub](https://github.com/ic3bl3u-bit)
 
 </div>
