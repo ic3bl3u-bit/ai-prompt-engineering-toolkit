@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI agents need different prompting than chat models. Learn the Agent Prompt Stack, 5 prompt patterns (ReAct, Scratchpad, Tool Selection), and how to define success criteria.">
+<meta name="keywords" content="AI agent prompt engineering, autonomous agents, ReAct pattern, agent prompting, LLM agents">
+<meta name="theme-color" content="#0a0a0f">
+<meta property="og:title" content="AI Agent Prompt Engineering: How to Prompt Autonomous Agents in 2026">
+<meta property="og:description" content="The Agent Prompt Stack, 5 patterns, and the #1 mistake developers make with autonomous agents.">
+<meta property="og:url" content="https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/ai-agent-prompt-engineering/">
+<meta name="twitter:card" content="summary_large_image">
+<title>AI Agent Prompt Engineering (2026) — Streamline AI</title>
+<link rel="canonical" href="https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/ai-agent-prompt-engineering/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%236366f1'/><text x='50' y='68' font-family='Inter,system-ui,sans-serif' font-size='52' font-weight='700' text-anchor='middle' fill='white'>S</text></svg>">
+<style>
+  :root{
+    --bg:#0a0a0f; --bg-2:#11111a; --bg-3:#181826; --border:#262635;
+    --text:#e8e8f0; --text-2:#9e9eaf; --text-3:#6f6f85;
+    --accent:#6366f1; --accent-hover:#7c7ff5; --accent-soft:rgba(99,102,241,.15);
+    --green:#22c55e; --amber:#f59e0b; --red:#ef4444;
+    --radius:12px; --radius-lg:18px;
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:linear-gradient(180deg,var(--bg) 0%,#0c0c14 100%);color:var(--text);font-family:var(--sans);line-height:1.7;font-size:17px;-webkit-font-smoothing:antialiased}
+  .container{max-width:780px;margin:0 auto;padding:0 24px}
+  nav{position:sticky;top:0;z-index:100;background:rgba(10,10,15,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:14px 0}
+  nav .inner{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;padding:0 24px}
+  nav .logo{font-weight:800;font-size:18px;color:var(--text);text-decoration:none;letter-spacing:-.02em}
+  nav .logo span{color:var(--accent)}
+  nav a.cta{background:var(--accent);color:#fff;text-decoration:none;padding:8px 18px;border-radius:8px;font-size:14px;font-weight:600;transition:.2s}
+  nav a.cta:hover{background:var(--accent-hover)}
+  article{padding:60px 0 80px}
+  .meta{color:var(--text-3);font-size:14px;margin-bottom:24px}
+  .tag{background:var(--accent-soft);color:var(--accent);padding:3px 10px;border-radius:6px;font-size:12px;font-weight:600;margin-right:8px}
+  h1{font-size:36px;font-weight:800;letter-spacing:-.03em;line-height:1.2;margin-bottom:16px}
+  h2{font-size:26px;font-weight:700;letter-spacing:-.02em;margin-top:48px;margin-bottom:16px}
+  h3{font-size:20px;font-weight:600;margin-top:32px;margin-bottom:12px}
+  p{margin-bottom:18px}
+  strong{color:#fff;font-weight:600}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  code{font-family:var(--mono);background:var(--bg-3);padding:2px 7px;border-radius:5px;font-size:14px;color:var(--accent-hover)}
+  pre{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;overflow-x:auto;margin:20px 0 24px}
+  pre code{background:none;padding:0;color:var(--text);font-size:13px;line-height:1.6;white-space:pre}
+  blockquote{border-left:3px solid var(--accent);padding-left:20px;color:var(--text-2);font-style:italic;margin:24px 0}
+  ul,ol{margin:0 0 18px 22px}
+  li{margin-bottom:8px}
+  hr{border:none;border-top:1px solid var(--border);margin:48px 0}
+  .stack-layer{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin:16px 0}
+  .stack-layer .num{font-size:13px;font-weight:700;color:var(--accent);font-family:var(--mono)}
+  .pattern{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin:20px 0}
+  .pattern h3{margin-top:0}
+  .warning{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.3);border-radius:var(--radius-lg);padding:28px;margin:32px 0}
+  .warning h2{margin-top:0;color:var(--amber)}
+  .cta-box{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;margin:40px 0;text-align:center}
+  .cta-box h2{margin-top:0;font-size:24px}
+  .cta-box p{color:var(--text-2);margin-bottom:20px}
+  .btn{display:inline-block;background:var(--accent);color:#fff;padding:12px 28px;border-radius:8px;font-weight:600;text-decoration:none;margin:4px;transition:.2s}
+  .btn:hover{background:var(--accent-hover);text-decoration:none}
+  .btn.outline{background:transparent;border:1px solid var(--border);color:var(--text)}
+  .btn.outline:hover{border-color:var(--accent);color:var(--accent)}
+  .coupon{display:inline-block;background:var(--accent-soft);color:var(--accent);font-family:var(--mono);padding:2px 8px;border-radius:4px;font-size:14px;font-weight:600}
+  @media(max-width:640px){h1{font-size:28px}h2{font-size:22px}body{font-size:16px}.container{padding:0 16px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a href="https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/" class="logo">Streamline<span>AI</span></a>
+    <a href="https://streamline501.gumroad.com" class="cta">Get the Toolkit →</a>
+  </div>
+</nav>
+
+<article>
+<div class="container">
+
+<div class="meta">
+  <span class="tag">AI Agents</span>
+  July 7, 2026 · 12 min read
+</div>
+
+<h1>AI Agent Prompt Engineering: How to Prompt Autonomous Agents in 2026</h1>
+
+<p>In 2024, we treated LLMs as sophisticated text completion engines. In 2026, we treat them as autonomous entities capable of planning, executing, and iterating. The fundamental shift in prompt engineering is no longer about crafting the perfect single-turn response — it's about designing multi-step, autonomous workflows where the AI makes decisions over time.</p>
+
+<p>Traditional chat prompting relies on immediate, deterministic answers. Agent prompting requires guiding a system that operates with significant autonomy. An agent like Devin or Claude Computer Use does not just "answer"; it perceives an environment, reasons through a problem, executes code, observes the result, and repeats until a goal is met.</p>
+
+<hr>
+
+<h2>The Agent Prompt Stack</h2>
+
+<p>Effective agent prompting is not a single block of text; it is a layered stack. Each layer serves a distinct purpose.</p>
+
+<div class="stack-layer">
+  <span class="num">LAYER 1</span>
+  <h3>System Prompt: Identity and Capabilities</h3>
+  <p>Defines the agent's "soul." Establishes the persona, scope of authority, and limitations.</p>
+  <ul>
+    <li><strong>Role:</strong> "You are an autonomous software engineer."</li>
+    <li><strong>Capabilities:</strong> "You have access to a terminal, file browser, and web search."</li>
+    <li><strong>Limits:</strong> "Do not modify system files outside <code>/app</code>."</li>
+  </ul>
+</div>
+
+<div class="stack-layer">
+  <span class="num">LAYER 2</span>
+  <h3>Task Prompt: Specific Objective</h3>
+  <p>Defines the "what." Should be outcome-oriented, not step-by-step.</p>
+  <ul>
+    <li><strong>Bad:</strong> "Create a file, write code, save it, run it."</li>
+    <li><strong>Good:</strong> "Implement a REST API endpoint for user authentication. The solution must pass all unit tests in <code>/tests</code>."</li>
+  </ul>
+</div>
+
+<div class="stack-layer">
+  <span class="num">LAYER 3</span>
+  <h3>Context Prompt: State and Environment</h3>
+  <p>Injects current state of the world. Includes:</p>
+  <ul>
+    <li><strong>Memory:</strong> Previous actions and outcomes</li>
+    <li><strong>Environment:</strong> Directory structure, open files, API responses</li>
+    <li><strong>Constraints:</strong> Time limits, token budgets, library versions</li>
+  </ul>
+</div>
+
+<div class="stack-layer">
+  <span class="num">LAYER 4</span>
+  <h3>Guardrail Prompt: Safety and Stop Conditions</h3>
+  <p>The most critical layer for stability. Defines the "off-ramps."</p>
+  <ul>
+    <li><strong>Safety:</strong> "If you encounter a security warning, stop immediately."</li>
+    <li><strong>Stop:</strong> "You are done when the test suite passes with 100%."</li>
+    <li><strong>Escalation:</strong> "If you fail after 3 attempts, output <code>ERROR: MAX_RETRIES</code> and halt."</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>5 Agent Prompt Patterns</h2>
+
+<div class="pattern">
+  <h3>1. The Scratchpad Pattern</h3>
+  <p>Forces the agent to externalize reasoning and state before acting. Reduces hallucination.</p>
+<pre><code>scratchpad_template = """
+## Current State
+- Goal: {goal}
+- Completed Steps: {completed_steps}
+- Current Obstacle: {current_obstacle}
+
+## Reasoning
+{reasoning}
+
+## Action Plan
+1. {step_1}
+2. {step_2}
+"""</code></pre>
+</div>
+
+<div class="pattern">
+  <h3>2. The ReAct Pattern (Reason + Act)</h3>
+  <p>Interleaves reasoning with action. The backbone of most autonomous agents.</p>
+<pre><code>react_template = """
+You must follow this format strictly:
+
+Thought: I need to check the directory structure.
+Action: read_file
+Action Input: src/main.py
+Observation: [Output of read_file]
+Thought: The file lacks auth logic. I need middleware.
+Action: write_file
+Action Input: {path: "src/middleware/auth.py", content: "..."}
+Observation: File saved successfully.
+"""</code></pre>
+</div>
+
+<div class="pattern">
+  <h3>3. Tool Selection Prompt</h3>
+  <p>When an agent has multiple tools, the prompt must define explicit selection logic.</p>
+<pre><code>tool_selection_prompt = """
+Available Tools:
+1. web_search(query): For real-time information
+2. execute_code(script): For running Python
+3. read_file(path): For viewing code
+
+Decision Logic:
+- Current news → web_search
+- Calculate something → execute_code
+- View a file → read_file
+
+Current Query: {user_query}
+Select the best tool and justify.
+"""</code></pre>
+</div>
+
+<div class="pattern">
+  <h3>4. Self-Correction Prompt</h3>
+  <p>Agent reviews its own output before finalizing. This "critic" step improves quality.</p>
+<pre><code>self_correction_prompt = """
+## Previous Output
+{agent_output}
+
+## Review Criteria
+1. Did the code run without syntax errors?
+2. Did it meet the original requirement?
+3. Any security vulnerabilities?
+
+If any criteria fail, rewrite. If all pass, confirm 'APPROVED'.
+"""</code></pre>
+</div>
+
+<div class="pattern">
+  <h3>5. Termination Prompt</h3>
+  <p>Without explicit termination, agents loop forever. Define exact exit conditions.</p>
+<pre><code>termination_prompt = """
+## Success Criteria
+- The file solution.py exists
+- Running python solution.py outputs "Success"
+
+## Failure Criteria
+- 5 iterations without success
+- Critical error encountered
+
+If success → output: [DONE]
+If failure → output: [FAILED]
+"""</code></pre>
+</div>
+
+<hr>
+
+<div class="warning">
+  <h2>The #1 Mistake: Not Defining Success Criteria</h2>
+  <p>If you take one lesson from this article: <strong>agents will loop forever if you don't define what "done" looks like.</strong></p>
+  <p>The most common error is providing a vague goal like "Fix the bug" without a validation metric. Does "fixed" mean the code compiles? Tests pass? The user sees the correct UI?</p>
+  <p>Without explicit criteria, the agent enters the "infinite loop of hope" — making changes, seeing new errors, making more changes. To prevent this:</p>
+  <ul>
+    <li>Define <strong>max iterations</strong> (e.g., <code>max_steps=10</code>)</li>
+    <li>Define a <strong>specific exit command</strong> (e.g., <code>[DONE]</code>)</li>
+    <li>Define <strong>machine-readable criteria</strong>: "Button color must be #FF0000" not "make it red"</li>
+    <li>Define a <strong>fallback</strong>: "If you fail 3 times, ask the user"</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>Conclusion</h2>
+
+<p>Prompting autonomous agents in 2026 is less about persuasion and more about engineering. It requires a structured approach: identity, context, reasoning patterns, and strict operational boundaries.</p>
+
+<blockquote>Don't let your agents wander aimlessly. Define their path, limit their horizon, and watch them work.</blockquote>
+
+<div class="cta-box">
+  <h2>Build Better Agents</h2>
+  <p>Our toolkit includes agent prompt templates for ReAct, Scratchpad, Tool Selection, and Guardrails — ready to deploy.</p>
+  <a href="https://github.com/ic3bl3u-bit/ai-prompt-engineering-toolkit" class="btn">Free Templates on GitHub</a>
+  <a href="https://streamline501.gumroad.com" class="btn outline">Premium Agent Packs</a>
+  <p style="margin-top:16px;font-size:14px;color:var(--text-3)">Use coupon <span class="coupon">GITHUB20</span> for 20% off.</p>
+</div>
+
+</div>
+</article>
+
+</body>
+</html>
