@@ -30,4 +30,19 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/rtfc-framework-explained/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/zero-ad-spend-playbook/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Stop writing vague prompts. The RTFC framework (Role, Task, Format, Constraints) gets you 10x better output from any AI.">
+<meta name="theme-color" content="#0a0a0f">
+<meta property="og:title" content="The RTFC Framework: How to Write AI Prompts That Actually Work">
+<meta property="og:description" content="The 4-part framework that eliminates bad AI output. With real examples.">
+<meta property="og:url" content="https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/rtfc-framework-explained/">
+<meta name="twitter:card" content="summary_large_image">
+<title>The RTFC Framework Explained — Streamline AI</title>
+<link rel="canonical" href="https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/rtfc-framework-explained/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%236366f1'/><text x='50' y='68' font-family='Inter,system-ui,sans-serif' font-size='52' font-weight='700' text-anchor='middle' fill='white'>S</text></svg>">
+<style>
+  :root{
+    --bg:#0a0a0f; --bg-2:#11111a; --bg-3:#181826; --border:#262635;
+    --text:#e8e8f0; --text-2:#9e9eaf; --text-3:#6f6f85;
+    --accent:#6366f1; --accent-hover:#7c7ff5; --accent-soft:rgba(99,102,241,.15);
+    --green:#22c55e; --red:#ef4444;
+    --radius:12px; --radius-lg:18px;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html{scroll-behavior:smooth}
+  body{background:linear-gradient(180deg, var(--bg) 0%, #0c0c14 100%); color:var(--text); font-family:var(--sans); line-height:1.7; font-size:17px; -webkit-font-smoothing:antialiased}
+  .container{max-width:780px; margin:0 auto; padding:0 24px}
+  nav{position:sticky; top:0; z-index:100; background:rgba(10,10,15,.85); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); padding:14px 0}
+  nav .inner{display:flex; align-items:center; justify-content:space-between; max-width:1100px; margin:0 auto; padding:0 24px}
+  nav .logo{font-weight:800; font-size:18px; color:var(--text); text-decoration:none; letter-spacing:-.02em}
+  nav .logo span{color:var(--accent)}
+  nav a.cta{background:var(--accent); color:#fff; text-decoration:none; padding:8px 18px; border-radius:8px; font-size:14px; font-weight:600; transition:.2s}
+  nav a.cta:hover{background:var(--accent-hover)}
+  article{padding:60px 0 80px}
+  .meta{color:var(--text-3); font-size:14px; margin-bottom:24px}
+  .tag{background:var(--accent-soft); color:var(--accent); padding:3px 10px; border-radius:6px; font-size:12px; font-weight:600; margin-right:8px}
+  h1{font-size:36px; font-weight:800; letter-spacing:-.03em; line-height:1.2; margin-bottom:16px}
+  h2{font-size:26px; font-weight:700; letter-spacing:-.02em; margin-top:48px; margin-bottom:16px}
+  h3{font-size:20px; font-weight:600; margin-top:32px; margin-bottom:12px}
+  p{margin-bottom:18px}
+  strong{color:#fff; font-weight:600}
+  a{color:var(--accent); text-decoration:none}
+  a:hover{text-decoration:underline}
+  code{font-family:var(--mono); background:var(--bg-3); padding:2px 7px; border-radius:5px; font-size:14px; color:var(--accent-hover)}
+  pre{background:var(--bg-2); border:1px solid var(--border); border-radius:var(--radius); padding:20px 24px; overflow-x:auto; margin:20px 0 24px}
+  pre code{background:none; padding:0; color:var(--text); font-size:14px; line-height:1.6; white-space:pre}
+  blockquote{border-left:3px solid var(--accent); padding-left:20px; color:var(--text-2); font-style:italic; margin:24px 0}
+  table{width:100%; border-collapse:collapse; margin:24px 0; font-size:14px}
+  th{background:var(--bg-3); text-align:left; padding:12px 14px; border-bottom:2px solid var(--border); font-weight:600}
+  td{padding:12px 14px; border-bottom:1px solid var(--border); color:var(--text-2)}
+  hr{border:none; border-top:1px solid var(--border); margin:48px 0}
+  .cta-box{background:var(--bg-2); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px; margin:40px 0; text-align:center}
+  .cta-box h2{margin-top:0; font-size:24px}
+  .cta-box p{color:var(--text-2); margin-bottom:20px}
+  .btn{display:inline-block; background:var(--accent); color:#fff; padding:12px 28px; border-radius:8px; font-weight:600; text-decoration:none; margin:4px; transition:.2s}
+  .btn:hover{background:var(--accent-hover); text-decoration:none}
+  .btn.outline{background:transparent; border:1px solid var(--border); color:var(--text)}
+  .btn.outline:hover{border-color:var(--accent); color:var(--accent)}
+  .coupon{display:inline-block; background:var(--accent-soft); color:var(--accent); font-family:var(--mono); padding:2px 8px; border-radius:4px; font-size:14px; font-weight:600}
+  .framework-card{background:var(--bg-2); border:1px solid var(--border); border-radius:var(--radius); padding:24px; margin:20px 0}
+  .framework-card .letter{font-size:28px; font-weight:800; color:var(--accent); display:inline-block; margin-right:8px}
+  .bad{color:var(--red)}
+  .good{color:var(--green)}
+  @media(max-width:640px){h1{font-size:28px} h2{font-size:22px} body{font-size:16px} .container{padding:0 16px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a href="https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/" class="logo">Streamline<span>AI</span></a>
+    <a href="https://streamline501.gumroad.com" class="cta">Get the Toolkit →</a>
+  </div>
+</nav>
+
+<article>
+<div class="container">
+
+<div class="meta">
+  <span class="tag">Prompt Engineering</span>
+  July 4, 2026 · 6 min read
+</div>
+
+<h1>The RTFC Framework: How to Write AI Prompts That Actually Work</h1>
+
+<h2>The Problem with Most Prompts</h2>
+
+<p>90% of people use AI like this:</p>
+
+<blockquote>"Write me a blog post about marketing."</blockquote>
+
+<p>And they get generic, boring, surface-level output. Then they blame the AI.</p>
+
+<p>The problem isn't the model. <strong>The problem is the prompt.</strong></p>
+
+<hr>
+
+<h2>The RTFC Framework</h2>
+
+<p>After testing 500+ prompts across ChatGPT, Claude, and Gemini, I've found that every great prompt has 4 elements:</p>
+
+<div class="framework-card">
+  <p><span class="letter">R</span> <strong>Role</strong> — Tell the AI <strong>who it is</strong>. This primes it with the right knowledge and tone.</p>
+<pre><code><span class="bad">✗</span> "Write a marketing email"
+<span class="good">✓</span> "You are a senior email marketing copywriter who has
+   written campaigns for Nike, Apple, and Spotify."</code></pre>
+</div>
+
+<div class="framework-card">
+  <p><span class="letter">T</span> <strong>Task</strong> — Be <strong>specific</strong> about what you want. Not "write content" — what kind? How long? For whom?</p>
+<pre><code><span class="bad">✗</span> "Write content for my landing page"
+<span class="good">✓</span> "Write a landing page hero section (headline +
+   subheadline + CTA) for a B2B AI tool targeting startup founders."</code></pre>
+</div>
+
+<div class="framework-card">
+  <p><span class="letter">F</span> <strong>Format</strong> — Specify the <strong>output structure</strong>. This eliminates 90% of editing.</p>
+<pre><code><span class="bad">✗</span> "Give me content ideas"
+<span class="good">✓</span> "Give me 10 content ideas in a markdown table with
+   columns: Idea, Hook, Platform, Estimated Time, Difficulty (1-5)"</code></pre>
+</div>
+
+<div class="framework-card">
+  <p><span class="letter">C</span> <strong>Constraints</strong> — Set <strong>rules and boundaries</strong>. This is where most people go wrong by being too permissive.</p>
+<pre><code><span class="bad">✗</span> "Write a blog post"
+<span class="good">✓</span> "Write a 1,200-word blog post. Conversational tone.
+   Include 3 real-world examples. No jargon. Reading level: 8th grade.
+   Include a TL;DR at the top."</code></pre>
+</div>
+
+<hr>
+
+<h2>Putting It All Together</h2>
+
+<p>Here's a complete RTFC prompt:</p>
+
+<pre><code><strong>Role:</strong> You are a senior sales strategist who has helped
+50+ B2B startups increase their demo booking rate by 30%+.
+
+<strong>Task:</strong> Write a cold email outreach sequence (3 emails)
+for a SaaS tool that helps agencies automate client reporting.
+
+<strong>Format:</strong> For each email, provide:
+- Subject line (with A/B variant)
+- Email body (under 150 words)
+- Send timing (Day 1, Day 3, Day 7)
+- Single CTA
+
+<strong>Constraints:</strong>
+- Tone: confident but not pushy
+- Include one specific pain point per email
+- No buzzwords ("synergy", "revolutionary")
+- Each email must work standalone
+- Personalization placeholders in [brackets]</code></pre>
+
+<p>The output from this prompt is <strong>immediately usable</strong>. No editing needed.</p>
+
+<hr>
+
+<h2>5 More Prompts Using RTFC</h2>
+
+<h3>1. Content Calendar Generator</h3>
+<pre><code><strong>Role:</strong> Senior content strategist, 10 years in B2B SaaS.
+<strong>Task:</strong> Create a 30-day content calendar.
+<strong>Format:</strong> Table with Day, Topic, Platform, Hook, CTA.
+<strong>Constraints:</strong> Mix 70% educational, 30% promo. 2 SEO keywords per post.</code></pre>
+
+<h3>2. Customer Research Synthesizer</h3>
+<pre><code><strong>Role:</strong> UX researcher with expertise in qualitative analysis.
+<strong>Task:</strong> Analyze 20 customer interview transcripts, identify top 5 pain points.
+<strong>Format:</strong> Numbered list with: Pain Point, Frequency, Severity (1-5), Quote.
+<strong>Constraints:</strong> Prioritize by business impact. Include original quotes.</code></pre>
+
+<h3>3. Competitive Analysis</h3>
+<pre><code><strong>Role:</strong> Strategy consultant at McKinsey.
+<strong>Task:</strong> Compare 3 competitors in the AI prompt tool space.
+<strong>Format:</strong> Matrix table: Pricing, Features, Target Market, Strengths, Weaknesses.
+<strong>Constraints:</strong> Be objective. Use data, not opinions. End with recommendation.</code></pre>
+
+<h3>4. Code Reviewer</h3>
+<pre><code><strong>Role:</strong> Senior software engineer, Python, 15 years experience.
+<strong>Task:</strong> Review this function for bugs, performance, and readability.
+<strong>Format:</strong> Line-by-line comments + summary score (1-10) + refactored version.
+<strong>Constraints:</strong> Focus on production readiness. Flag security issues with ⚠️.</code></pre>
+
+<h3>5. Social Media Repurposer</h3>
+<pre><code><strong>Role:</strong> Social media manager who grew 3 accounts to 100K+ followers.
+<strong>Task:</strong> Turn this blog post into 5 tweets, 1 LinkedIn post, and 1 thread outline.
+<strong>Format:</strong> Each piece ready to copy-paste. Include hashtags.
+<strong>Constraints:</strong> Adapt tone per platform. Max 280 chars per tweet.</code></pre>
+
+<hr>
+
+<h2>Why This Works</h2>
+
+<p>AI models are <strong>prediction engines</strong>. They predict the most likely next word based on context. When you give vague prompts, the AI falls back to its training average — which is mediocre.</p>
+
+<p>When you specify <strong>role, task, format, and constraints</strong>, you constrain the prediction space. The output becomes specific, structured, and immediately useful.</p>
+
+<p>Think of it like ordering at a restaurant:</p>
+
+<ul>
+  <li class="bad">✗ "Give me food" → You get whatever they feel like making</li>
+  <li class="good">✓ "I'll have the ribeye, medium rare, with asparagus, no butter" → You get exactly what you want</li>
+</ul>
+
+<div class="cta-box">
+  <h2>Get 500+ More Prompts</h2>
+  <p>The full toolkit has 200+ production-ready prompts using RTFC across 15 categories.</p>
+  <a href="https://github.com/ic3bl3u-bit/ai-prompt-engineering-toolkit" class="btn">Free Sample on GitHub</a>
+  <a href="https://streamline501.gumroad.com" class="btn outline">Browse Premium Packs</a>
+  <p style="margin-top:16px; font-size:14px; color:var(--text-3)">Use coupon <span class="coupon">GITHUB20</span> for 20% off.</p>
+</div>
+
+</div>
+</article>
+
+</body>
+</html>
