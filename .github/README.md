@@ -11,7 +11,7 @@ This repository contains 15 free sample prompts that demonstrate the structured 
 - **Full Toolkit:** [Complete AI Toolkit](https://streamline501.gumroad.com/l/complete-ai-toolkit)
 - **Free Sample:** [Free AI Prompts](https://streamline501.gumroad.com/l/free-ai-prompts-sample)
 - **Store:** [streamline501.gumroad.com](https://streamline501.gumroad.com)
-- **Contact:** streamline501@gmail.com
+- **Contact:** ic3bl3u@gmail.com
 
 ## License
 

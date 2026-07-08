@@ -49,4 +49,4 @@ Be respectful. No spam. No promotional content in prompts (product links are in 
 
 ## Questions?
 
-Open an issue or email streamline501@gmail.com
+Open an issue or email ic3bl3u@gmail.com
