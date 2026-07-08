@@ -12,11 +12,11 @@ Free AI prompts for productivity — meeting notes, project management, planning
 
 See [README.md](../README.md) for the full prompts.
 
-## Get More Productivity Prompts
+## Get More Productivity Systems
 
-- [Project Management Prompts](https://streamline501.gumroad.com/l/project-management-prompts) — $19
-- [Freelance Business Prompts](https://streamline501.gumroad.com/l/freelance-business-prompts) — $29
-- [Notion Template Prompts](https://streamline501.gumroad.com/l/notion-template-prompts) — $24
+- [Project Management System](https://streamline501.gumroad.com/l/project-management-prompts) — $29
+- [Freelance Business System](https://streamline501.gumroad.com/l/freelance-business-prompts) — $29
+- [Notion Template System](https://streamline501.gumroad.com/l/notion-template-prompts) — $29
 
 [Get the Complete AI Toolkit →](https://streamline501.gumroad.com/l/complete-ai-toolkit) — $79
 

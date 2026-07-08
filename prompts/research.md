@@ -12,10 +12,10 @@ Free AI prompts for research — data analysis, competitor intelligence, synthes
 
 See [README.md](../README.md) for the full prompts.
 
-## Get More Research Prompts
+## Get More Research Systems
 
-- [Research & Analysis Prompts](https://streamline501.gumroad.com/l/research-analysis-prompts) — $19
-- [Sales & Outreach Prompts](https://streamline501.gumroad.com/l/sales-outreach-prompts) — $19
+- [Research & Analysis System](https://streamline501.gumroad.com/l/research-analysis-prompts) — $29
+- [Sales & Outreach System](https://streamline501.gumroad.com/l/sales-outreach-prompts) — $29
 
 [Get the Operations Bundle →](https://streamline501.gumroad.com/l/operations-bundle) — $47
 

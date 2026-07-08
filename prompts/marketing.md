@@ -16,11 +16,11 @@ Free AI prompts for marketing — content strategy, email sequences, social medi
 
 See [README.md](../README.md) for the full prompts.
 
-## Get More Marketing Prompts
+## Get More Marketing Systems
 
-- [Content Strategy Prompts](https://streamline501.gumroad.com/l/content-strategy-prompts) — $19
-- [Email Marketing Prompts](https://streamline501.gumroad.com/l/streamline-email-prompts) — $19
-- [Social Media Prompts](https://streamline501.gumroad.com/l/social-media-content-prompts) — $19
+- [Content Strategy System](https://streamline501.gumroad.com/l/content-strategy-prompts) — $29
+- [Email Marketing System](https://streamline501.gumroad.com/l/streamline-email-prompts) — $29
+- [Social Media System](https://streamline501.gumroad.com/l/social-media-content-prompts) — $29
 - [Marketing Bundle (all 3)](https://streamline501.gumroad.com/l/marketing-bundle) — $47
 
 Use code `GITHUB20` for 20% off.

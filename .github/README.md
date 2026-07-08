@@ -8,7 +8,7 @@ This repository contains 15 free sample prompts that demonstrate the structured 
 
 ## Links
 
-- **Full Prompt Pack:** [Complete AI Toolkit](https://streamline501.gumroad.com/l/complete-ai-toolkit)
+- **Full Toolkit:** [Complete AI Toolkit](https://streamline501.gumroad.com/l/complete-ai-toolkit)
 - **Free Sample:** [Free AI Prompts](https://streamline501.gumroad.com/l/free-ai-prompts-sample)
 - **Store:** [streamline501.gumroad.com](https://streamline501.gumroad.com)
 - **Contact:** streamline501@gmail.com

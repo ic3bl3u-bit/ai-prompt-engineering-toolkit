@@ -388,20 +388,20 @@ This framework alone will **3x your AI output quality** compared to vague prompt
 
 These 15 prompts are samples. The full toolkit includes **200+ prompts across 6 categories**:
 
-| Pack | Prompts | Price |
-|------|---------|-------|
-| Content Strategy | 12 | $19 |
-| Email Marketing | 12 | $19 |
-| Social Media (110+) | 110+ | $19 |
-| Project Management | 12 | $19 |
-| Sales & Outreach | 12 | $19 |
-| Research & Analysis | 12 | $19 |
-| Social Media Strategy | 12 | $19 |
-| Crypto Trader | 12 | $19 |
-| LinkedIn Growth | 12 | $19 |
-| AI Image Generation | 12 | $24 |
-| Notion Templates | 12 | $24 |
-| Etsy / Shopify Seller | 12 | $24 |
+| System | Prompts | Price |
+|--------|---------|-------|
+| Content Strategy | 12 | $29 |
+| Email Marketing | 12 | $29 |
+| Social Media (110+) | 110+ | $29 |
+| Project Management | 12 | $29 |
+| Sales & Outreach | 12 | $29 |
+| Research & Analysis | 12 | $29 |
+| Social Media Strategy | 12 | $29 |
+| Crypto Trader | 12 | $29 |
+| LinkedIn Growth | 12 | $29 |
+| AI Image Generation | 12 | $29 |
+| Notion Templates | 12 | $29 |
+| Etsy / Shopify Seller | 12 | $29 |
 | Freelance Business | 12 | $29 |
 | Premium AI Prompts (50) | 50 | $29 |
 
@@ -409,15 +409,15 @@ These 15 prompts are samples. The full toolkit includes **200+ prompts across 6 
 
 | Product | Price | Value |
 |---------|-------|-------|
-| Marketing Bundle (3 packs) | $47 | Save $10 |
-| Operations Bundle (3 packs) | $47 | Save $10 |
-| Complete AI Toolkit (6 packs) | $79 | Save $35 |
-| **Ultimate Launch Bundle (all 15)** | **$97** | **$301 value (68% off)** |
+| Marketing Bundle (3 systems) | $47 | Save $40 |
+| Operations Bundle (3 systems) | $47 | Save $40 |
+| Complete AI Toolkit (6 systems) | $79 | Save $95 |
+| **Ultimate Launch Bundle (all 15)** | **$97** | **$435 value (78% off)** |
 | Team License (5 seats) | $149 | For agencies & teams |
 
 **GitHub users get 20% off with code `GITHUB20`.**
 
-Every pack includes PDF + plain text, quick-start guide, lifetime updates, and commercial use license.
+Every system includes PDF + plain text, quick-start guide, lifetime updates, and commercial use license.
 
 → [Browse All Products](https://streamline501.gumroad.com)
 
@@ -435,7 +435,7 @@ MIT License — use these prompts personally, commercially, however you want. At
 
 <div align="center">
 
-**[Get Premium Prompts](https://streamline501.gumroad.com/l/complete-ai-toolkit)** · **[Free Sample Pack](https://streamline501.gumroad.com/l/free-ai-prompts-sample)** · **[All Products](https://streamline501.gumroad.com)**
+**[Get Premium Prompts](https://streamline501.gumroad.com/l/complete-ai-toolkit)** · **[Free Sample](https://streamline501.gumroad.com/l/free-ai-prompts-sample)** · **[All Products](https://streamline501.gumroad.com)**
 
 Built by [Streamline AI](https://streamline501.gumroad.com) · [Follow on GitHub](https://github.com/ic3bl3u-bit)
 
