@@ -3,13 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Stop writing vague prompts. The RTFC framework (Role, Task, Format, Constraints) gets you 10x better output from any AI.">
+<meta name="description" content="RTFC stands for Role, Task, Format, Constraints (or Criteria). The definitive guide to the RTFC prompt engineering framework with examples, comparisons, and templates.">
+<meta name="keywords" content="RTFC framework, RTFC prompt engineering, Role Task Format Constraints, RTFC AI prompts, prompt engineering framework">
 <meta name="theme-color" content="#0a0a0f">
-<meta property="og:title" content="The RTFC Framework: How to Write AI Prompts That Actually Work">
-<meta property="og:description" content="The 4-part framework that eliminates bad AI output. With real examples.">
+<meta property="og:title" content="The RTFC Framework: The Definitive Guide to Better AI Prompts">
+<meta property="og:description" content="RTFC (Role, Task, Format, Constraints) is the prompt engineering framework for production AI use. Free templates and examples.">
 <meta property="og:url" content="https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/rtfc-framework-explained/">
+<meta property="og:type" content="article">
+<meta property="article:author" content="Streamline AI">
+<meta property="article:published_time" content="2026-07-04">
 <meta name="twitter:card" content="summary_large_image">
-<title>The RTFC Framework Explained — Streamline AI</title>
+<title>RTFC Framework Explained: Role, Task, Format, Constraints — Streamline AI</title>
 <link rel="canonical" href="https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/rtfc-framework-explained/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%236366f1'/><text x='50' y='68' font-family='Inter,system-ui,sans-serif' font-size='52' font-weight='700' text-anchor='middle' fill='white'>S</text></svg>">
 <style>
@@ -215,8 +219,101 @@ for a SaaS tool that helps agencies automate client reporting.
   <p style="margin-top:16px; font-size:14px; color:var(--text-3)">Use coupon <span class="coupon">GITHUB20</span> for 20% off.</p>
 </div>
 
+<hr>
+
+<h2>FAQ: RTFC Framework</h2>
+
+<h3>What does RTFC stand for?</h3>
+<p>RTFC stands for <strong>R</strong>ole, <strong>T</strong>ask, <strong>F</strong>ormat, <strong>C</strong>onstraints. Some practitioners use "Criteria" for the C instead of "Constraints" — both refer to the same concept: defining quality standards and rules the AI must follow.</p>
+
+<h3>RTFC Constraints vs Criteria — what's the difference?</h3>
+<p>Practically, nothing. "Constraints" implies rules the AI <em>must not</em> break (negative constraints like "no jargon, max 150 words"). "Criteria" implies quality standards the output <em>should</em> meet (positive criteria like "persuasive tone, professional"). We recommend using both: tell the AI what to do AND what not to do.</p>
+
+<h3>Is RTFC better than CRISPE or RACE?</h3>
+<p>For production and business use, yes. RTFC produces structured, consistent output that requires less editing. <a href="../rtfc-vs-crispe-vs-race/">See our full comparison of RTFC vs CRISPE vs RACE →</a></p>
+
+<h3>Does RTFC work with all AI models?</h3>
+<p>Yes. RTFC is model-agnostic. It works with ChatGPT (GPT-4, GPT-4o), Claude (3.5 Sonnet, Opus), Gemini (Pro, Ultra), and open-source models like Llama and Mistral.</p>
+
+<h3>Where can I learn more about prompt engineering?</h3>
+<p>Check out our <a href="../50-ai-prompts-for-business/">50 AI Prompts for Business</a> guide, our <a href="../ai-agent-prompt-engineering/">AI Agent Prompt Engineering</a> deep dive, or browse the <a href="https://github.com/ic3bl3u-bit/ai-prompt-engineering-toolkit">free templates on GitHub</a>.</p>
+
 </div>
 </article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "The RTFC Framework: The Definitive Guide to Better AI Prompts",
+  "description": "RTFC stands for Role, Task, Format, Constraints (or Criteria). A prompt engineering framework for production AI use.",
+  "author": {
+    "@type": "Organization",
+    "name": "Streamline AI",
+    "url": "https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Streamline AI"
+  },
+  "datePublished": "2026-07-04",
+  "dateModified": "2026-07-08",
+  "mainEntityOfPage": "https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/rtfc-framework-explained/",
+  "about": {
+    "@type": "Thing",
+    "name": "RTFC Framework (Prompt Engineering)"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does RTFC stand for in prompt engineering?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "RTFC stands for Role, Task, Format, Constraints. Some practitioners use 'Criteria' instead of 'Constraints' — both work. The framework ensures AI prompts include who the AI should be (Role), what to do (Task), how to structure the output (Format), and what rules to follow (Constraints)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is RTFC different from other prompt frameworks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "RTFC focuses on production readiness. Unlike CRISPE (6 variables, creative-focused) or RACE (4 variables but minimal), RTFC's Format and Constraints sections ensure outputs are structured, consistent, and ready for automation. RTFC outputs can be directly inserted into CRMs, CI/CD pipelines, or business workflows without editing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is RTFC or CRISPE better for business use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "RTFC is better for business and production use because it enforces output structure (Format) and quality rules (Constraints). CRISPE is better for creative brainstorming and marketing copy where tone variation is desired. For automated emails, code generation, data extraction, and compliance documents, RTFC produces more consistent results."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use RTFC with ChatGPT, Claude, and Gemini?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. RTFC is model-agnostic. It works with ChatGPT (GPT-4, GPT-4o), Claude (3.5 Sonnet, Opus), Gemini (Pro, Ultra), and open-source models like Llama and Mistral. The framework structures your prompt so any LLM produces better output."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I get free RTFC prompt templates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The AI Prompt Engineering Toolkit on GitHub includes 15 free RTFC templates. The full premium collection has 200+ templates across 15 categories including sales, marketing, engineering, and operations. Available at github.com/ic3bl3u-bit/ai-prompt-engineering-toolkit."
+      }
+    }
+  ]
+}
+</script>
 
 </body>
 </html>
