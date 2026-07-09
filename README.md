@@ -4,7 +4,7 @@
 
 # AI Prompt Engineering Toolkit
 
-### 200+ battle-tested prompts that save professionals 10+ hours per week
+### A structured prompt engineering system based on the RTFC methodology — multi-model, reusable, and designed for reproducible AI workflows
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Prompts](https://img.shields.io/badge/Prompts-200+-blue.svg)](https://streamline501.gumroad.com)
@@ -12,7 +12,7 @@
 [![Works with Claude](https://img.shields.io/badge/Works%20with-Claude-green.svg)](https://streamline501.gumroad.com)
 [![Works with Gemini](https://img.shields.io/badge/Works%20with-Gemini-green.svg)](https://streamline501.gumroad.com)
 
-**Stop guessing at prompts. Start getting 10x better output from every AI conversation.**
+**Stop guessing at prompts. Start building reproducible AI workflows with structured prompt engineering.**
 
 [Get the Full Collection →](https://streamline501.gumroad.com/l/complete-ai-toolkit) · [Free Sample →](https://streamline501.gumroad.com/l/free-ai-prompts-sample)
 
@@ -24,7 +24,13 @@
 
 Most people write prompts like *"write a blog post"* or *"help me with marketing"* — and get generic, mediocre output. The difference between a bad prompt and a great one isn't talent. It's **structure**.
 
-This toolkit uses the **RTFC Framework** (Role → Task → Format → Constraints) across every prompt. The result: AI output that's specific, actionable, and ready to use — no rewriting required.
+This toolkit implements the **RTFC Framework** (Role → Task → Format → Constraints) as a reusable methodology across every prompt. Each prompt is an immutable template with variable slots — not freeform text — so your prompt history becomes structured, queryable data you can audit, fork, and iterate on.
+
+This isn't a static PDF of one-liners. It's a prompt engineering system with:
+- **Model-specific variants** for ChatGPT, Claude, and Gemini
+- **Fill-in-bracket variable slots** that make prompts reusable across contexts
+- **Quality guardrails** (tone, length, format constraints) baked into every template
+- **Lineage tracking** — each prompt can be forked, modified, and compared
 
 **15 free prompts below. 200+ in the full collection.**
 
