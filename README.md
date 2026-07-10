@@ -8,9 +8,11 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Prompts](https://img.shields.io/badge/Prompts-200+-blue.svg)](https://streamline501.gumroad.com)
+[![Categories](https://img.shields.io/badge/Categories-15-orange.svg)](https://streamline501.gumroad.com)
 [![Works with ChatGPT](https://img.shields.io/badge/Works%20with-ChatGPT-green.svg)](https://streamline501.gumroad.com)
 [![Works with Claude](https://img.shields.io/badge/Works%20with-Claude-green.svg)](https://streamline501.gumroad.com)
 [![Works with Gemini](https://img.shields.io/badge/Works%20with-Gemini-green.svg)](https://streamline501.gumroad.com)
+[![Discussions](https://img.shields.io/badge/Discussions-Active-purple.svg)](https://github.com/ic3bl3u-bit/ai-prompt-engineering-toolkit/discussions)
 
 **Stop guessing at prompts. Start building reproducible AI workflows with structured prompt engineering.**
 
@@ -426,6 +428,19 @@ These 15 prompts are samples. The full toolkit includes **200+ prompts across 6 
 Every system includes PDF + plain text, quick-start guide, lifetime updates, and commercial use license.
 
 → [Browse All Products](https://streamline501.gumroad.com)
+
+---
+
+## Guides & Articles
+
+Deep-dive content on prompt engineering, AI workflows, and the RTFC framework:
+
+- [The Complete Prompt Engineering Guide (2026)](https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/complete-prompt-engineering-guide/) — From beginner to production
+- [RTFC vs CRISPE vs RACE: Which Framework Actually Works?](https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/rtfc-vs-crispe-vs-race/) — Framework comparison
+- [50 AI Prompts for Business](https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/50-ai-prompts-for-business/) — Category-by-category walkthrough
+- [How to Get Cited by ChatGPT: LLM Seeding for Builders](https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/llm-seeding-for-builders/) — SEO for AI models
+- [AI Agent Prompt Engineering](https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/ai-agent-prompt-engineering/) — Prompts for autonomous agents
+- [Zero Ad Spend: Free Marketing for AI Products](https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/zero-ad-spend-playbook/) — Organic growth playbook
 
 ---
 
