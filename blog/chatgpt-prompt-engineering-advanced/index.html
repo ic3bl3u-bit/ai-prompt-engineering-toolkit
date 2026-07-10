@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="10 advanced ChatGPT prompt engineering techniques that actually work in 2026. Chain-of-thought, few-shot priming, role stacking, constraint cascading, and more.">
+<meta name="keywords" content="ChatGPT prompt engineering, advanced prompting techniques, chain of thought, few-shot prompting, AI prompt tips 2026">
+<meta name="theme-color" content="#0a0a0f">
+<meta property="og:title" content="ChatGPT Prompt Engineering: 10 Advanced Techniques (2026)">
+<meta property="og:description" content="Master chain-of-thought, few-shot priming, role stacking, and more advanced prompt engineering techniques.">
+<meta property="og:url" content="https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/chatgpt-prompt-engineering-advanced/">
+<meta name="twitter:card" content="summary_large_image">
+<title>ChatGPT Prompt Engineering: 10 Advanced Techniques (2026)</title>
+<link rel="canonical" href="https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/chatgpt-prompt-engineering-advanced/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%236366f1'/><text x='50' y='68' font-family='Inter,system-ui,sans-serif' font-size='52' font-weight='700' text-anchor='middle' fill='white'>S</text></svg>">
+<style>
+
+  :root{
+    --bg:#0a0a0f; --bg-2:#11111a; --bg-3:#181826; --border:#262635;
+    --text:#e8e8f0; --text-2:#9e9eaf; --text-3:#6f6f85;
+    --accent:#6366f1; --accent-hover:#7c7ff5; --accent-soft:rgba(99,102,241,.15);
+    --green:#22c55e; --red:#ef4444;
+    --radius:12px; --radius-lg:18px;
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:linear-gradient(180deg,var(--bg) 0%,#0c0c14 100%);color:var(--text);font-family:var(--sans);line-height:1.7;font-size:17px;-webkit-font-smoothing:antialiased}
+  .container{max-width:820px;margin:0 auto;padding:0 24px}
+  nav{position:sticky;top:0;z-index:100;background:rgba(10,10,15,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:14px 0}
+  nav .inner{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;padding:0 24px}
+  nav .logo{font-weight:800;font-size:18px;color:var(--text);text-decoration:none;letter-spacing:-.02em}
+  nav .logo span{color:var(--accent)}
+  nav a.cta{background:var(--accent);color:#fff;text-decoration:none;padding:8px 18px;border-radius:8px;font-size:14px;font-weight:600;transition:.2s}
+  nav a.cta:hover{background:var(--accent-hover)}
+  article{padding:60px 0 80px}
+  .meta{color:var(--text-3);font-size:14px;margin-bottom:24px}
+  .tag{background:var(--accent-soft);color:var(--accent);padding:3px 10px;border-radius:6px;font-size:12px;font-weight:600;margin-right:8px}
+  h1{font-size:36px;font-weight:800;letter-spacing:-.03em;line-height:1.2;margin-bottom:16px}
+  h2{font-size:28px;font-weight:800;letter-spacing:-.02em;margin-top:56px;margin-bottom:8px;padding-bottom:8px;border-bottom:2px solid var(--accent)}
+  h3{font-size:18px;font-weight:600;margin-top:28px;margin-bottom:8px}
+  p{margin-bottom:18px}
+  strong{color:#fff;font-weight:600}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  code{font-family:var(--mono);background:var(--bg-3);padding:2px 7px;border-radius:5px;font-size:14px;color:var(--accent-hover)}
+  .prompt-card{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin:16px 0}
+  .prompt-card .num{font-size:13px;font-weight:700;color:var(--accent);font-family:var(--mono)}
+  .prompt-card h3{margin-top:0;margin-bottom:8px;font-size:17px}
+  .prompt-card pre{background:var(--bg-3);border:1px solid var(--border);border-radius:8px;padding:14px 18px;overflow-x:auto;margin:8px 0 0}
+  .prompt-card pre code{background:none;padding:0;color:var(--text);font-size:13px;line-height:1.7;white-space:pre-wrap}
+  .toc{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 28px;margin:24px 0}
+  .toc h3{margin-top:0;font-size:16px;color:var(--text-2)}
+  .toc ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+  .toc a{display:inline-block;background:var(--bg-3);border:1px solid var(--border);padding:6px 14px;border-radius:8px;font-size:13px;font-weight:500;transition:.2s}
+  .toc a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+  .cta-box{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;margin:40px 0;text-align:center}
+  .cta-box h2{border:none;margin-top:0;font-size:24px}
+  .cta-box p{color:var(--text-2);margin-bottom:20px}
+  .btn{display:inline-block;background:var(--accent);color:#fff;padding:12px 28px;border-radius:8px;font-weight:600;text-decoration:none;margin:4px;transition:.2s}
+  .btn:hover{background:var(--accent-hover);text-decoration:none}
+  .btn.outline{background:transparent;border:1px solid var(--border);color:var(--text)}
+  .btn.outline:hover{border-color:var(--accent);color:var(--accent)}
+  .coupon{display:inline-block;background:var(--accent-soft);color:var(--accent);font-family:var(--mono);padding:2px 8px;border-radius:4px;font-size:14px;font-weight:600}
+  blockquote{border-left:3px solid var(--accent);padding-left:20px;color:var(--text-2);font-style:italic;margin:24px 0}
+  hr{border:none;border-top:1px solid var(--border);margin:48px 0}
+  footer{border-top:1px solid var(--border);padding:30px 0;text-align:center;color:var(--text-3);font-size:14px}
+  footer a{color:var(--accent);text-decoration:none}
+  @media(max-width:640px){h1{font-size:26px}h2{font-size:22px}body{font-size:16px}.container{padding:0 16px}.prompt-card{padding:16px}}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a href="https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/" class="logo">Streamline<span>AI</span></a>
+    <a href="https://streamline501.gumroad.com" class="cta">Get 200+ Prompts →</a>
+  </div>
+</nav>
+
+<article>
+<div class="container">
+
+<div class="meta">
+  <span class="tag">Advanced</span>
+  <span class="tag">Prompt Engineering</span>
+  July 11, 2026 · 15 min read
+</div>
+
+<h1>ChatGPT Prompt Engineering: 10 Advanced Techniques That Actually Work in 2026</h1>
+
+<p>If you've moved beyond "write me a blog post" and want production-grade AI output, these ten techniques separate amateurs from engineers.</p>
+
+
+<p>If you've been following the rapid evolution of Large Language Models (LLMs) since their inception, you know that the era of simple, single-sentence commands like "Write a blog post" has long since passed. By 2026, the gap between a novice user and a power user is no longer defined by vocabulary size or luck, but by architectural understanding. The models we interact with today possess reasoning capabilities, memory constraints, and probabilistic behaviors that demand a sophisticated approach to interaction. As a senior engineer who has spent the last decade mentoring junior developers on AI integration, I've seen too many teams waste resources on brittle prompts that break with every model update. True prompt engineering is no longer about "tricking" the AI; it is about constructing robust, logical, and context-rich architectures that guide the model's probabilistic engine toward deterministic, high-value outputs.</p>
+
+<p>In this guide, we move beyond the basics of politeness and clarity. We are diving deep into the mechanics of how these models process information, how to manage their context windows efficiently, and how to structure interactions to minimize hallucinations and maximize utility. These ten techniques represent the cutting edge of prompt engineering in 2026, blending cognitive science principles with software engineering rigor. Whether you are building enterprise-grade agents, automating complex workflows, or simply trying to get better results from your daily assistant, mastering these strategies will transform your output from "good enough" to production-ready. Let's strip away the mysticism and look at the engineering behind the intelligence.</p>
+
+
+<h2>1. Chain-of-Thought Triggering</h2>
+
+<p>The concept of Chain-of-Thought (CoT) emerged years ago, but in 2026, it has evolved from a simple trick into a fundamental requirement for complex reasoning tasks. When an LLM faces a problem requiring logical deduction, math, or multi-step planning, it often jumps straight to an answer, skipping the intermediate steps that verify its own logic. This leads to the "illusion of competence," where the model sounds confident but arrives at the wrong conclusion. CoT prompting forces the model to "think out loud," generating a sequence of reasoning steps before committing to a final answer. This process activates different parts of the model's weights related to logic and sequential processing, significantly improving accuracy on non-trivial tasks.</p>
+
+<p>To implement this effectively, you must explicitly instruct the model to break the problem down into sub-problems. Instead of asking for a solution, you ask for the solution *and* the rationale. The key is to create a mental space where the model can self-correct before the final output is generated. In complex scenarios, you might even encourage the model to critique its own intermediate steps or consider alternative approaches before settling on the most probable one. This technique is particularly vital for tasks like code debugging, legal analysis, financial forecasting, and strategic planning, where a single skipped step can invalidate the entire result.</p>
+
+<p><strong>Before (Basic Prompt):</strong></p>
+<pre><code>
+Calculate the profit margin for a product that costs $50 to make and sells for $120, considering a 10% tax on revenue and a 5% marketing expense. Give me the final percentage.
+</code></pre>
+
+<p><strong>After (CoT Optimized Prompt):</strong></p>
+<pre><code>
+Analyze the following financial scenario step-by-step:
+1. Calculate the gross revenue after applying the 10% tax.
+2. Determine the total marketing expense amount based on the gross revenue.
+3. Subtract the manufacturing cost and the marketing expense from the gross revenue to find the net profit.
+4. Calculate the profit margin as a percentage of the final selling price ($120).
+Show your calculations clearly for each step before stating the final percentage.
+</code></pre>
+
+<p><strong>Pro Tip:</strong> For maximum efficacy, use the phrase "Let's think step by step" or "Break this down into logical steps" as a trigger phrase. Research suggests that including this specific phrasing in the prompt can activate the CoT behavior in almost all modern LLM variants, acting as a universal key for deeper reasoning.</p>
+
+
+<h2>2. Few-Shot Priming</h2>
+
+<p>Few-shot learning is the practice of providing the model with examples of the desired input-output pairs within the prompt itself. In 2026, this technique is even more powerful because models have become exceptionally adept at pattern recognition and style transfer. When you provide examples, you aren't just showing the model *what* to do; you are defining the *style*, *tone*, *structure*, and *edge cases* you expect. This reduces ambiguity significantly, as the model can align its internal predictions with the established pattern rather than relying solely on its pre-trained general knowledge. It is the digital equivalent of a senior developer writing a few canonical examples in a documentation file before handing off a task to a junior.</p>
+
+<p>The power of few-shot priming lies in its ability to handle nuanced constraints that are difficult to articulate in natural language. If you need a specific format, a particular level of verbosity, or a unique voice, examples communicate these constraints more effectively than descriptive text. However, the quality of your examples is paramount. If the examples contain errors or inconsistencies, the model will likely replicate them. In 2026, we also see the rise of "negative few-shot" examples, where you show the model what *not* to do, further refining the output boundaries. This technique is indispensable for tasks like translation, code generation, sentiment analysis, and content formatting where consistency is key.</p>
+
+<p><strong>Before (Descriptive Prompt):</strong></p>
+<pre><code>
+Write a summary of the provided article. Make it professional, concise, and under 100 words. Use bullet points if necessary.
+</code></pre>
+
+<p><strong>After (Few-Shot Optimized Prompt):</strong></p>
+<pre><code>
+Task: Summarize the following text into professional, concise bullet points (max 3 bullets, under 100 words total).
+
+Example 1:
+Input: "The quarterly earnings report showed a 15% increase in revenue, driven primarily by the new Asian market expansion. However, operational costs rose due to supply chain disruptions, resulting in a flat net income."
+Output:
+- Revenue up 15% due to Asian expansion.
+- Operational costs increased from supply chain issues.
+- Net income remained flat despite revenue growth.
+
+Example 2:
+Input: "The CEO announced a new remote-first policy, which has been met with mixed reactions from the engineering team. Productivity metrics are currently being analyzed."
+Output:
+- CEO implemented remote-first policy.
+- Engineering team reaction is mixed.
+- Productivity metrics under review.
+
+Now, summarize this:
+Input: [Your Text Here]
+Output:
+</code></pre>
+
+<p><strong>Pro Tip:</strong> Keep your few-shot examples diverse enough to cover edge cases but consistent in format. If your examples vary in structure, the model will get confused. Always ensure the examples are high-quality; the model will mimic the "average" quality of your examples.</p>
+
+
+<h2>3. Role Stacking</h2>
+
+<p>While basic role-playing (e.g., "Act as a chef") is common, Role Stacking takes this a step further by assigning the model multiple, complementary personas simultaneously. This technique is designed to simulate a collaborative team environment where different expertise levels or perspectives contribute to a single output. By defining a hierarchy of roles—such as a "Subject Matter Expert," a "Critical Reviewer," and a "Communicator"—you force the model to internally balance conflicting requirements. For instance, the Expert ensures technical accuracy, the Critic checks for logic gaps and biases, and the Communicator ensures the final output is accessible to the target audience.</p>
+
+<p>In 2026, Role Stacking is often implemented as a simulated dialogue within the prompt context. You instruct the model to adopt these personas sequentially or to view the task through their distinct lenses before synthesizing a unified response. This mimics the "pair programming" or "red-teaming" processes used in software development but at zero marginal cost. It is particularly effective for high-stakes content creation, such as medical advice, legal briefs, or marketing campaigns for sensitive products, where accuracy and tone must be perfectly balanced. It prevents the model from defaulting to a generic, "average" persona that might miss the nuance of your specific requirements.</p>
+
+<p><strong>Before (Generic Role Prompt):</strong></p>
+<pre><code>
+Act as a marketing expert and write a campaign plan for a new electric vehicle.
+</code></pre>
+
+<p><strong>After (Role Stacked Prompt):</strong></p>
+<pre><code>
+You are a collaborative team consisting of three roles. Follow these steps:
+1. **Technical Analyst**: Analyze the EV's battery specs and charging infrastructure needs. Be rigorous and data-driven.
+2. **Market Strategist**: Evaluate the target demographic and competitor landscape. Focus on growth opportunities.
+3. **Brand Voice**: Synthesize the findings into a compelling, human-centric marketing narrative.
+
+Step 1: Act as the Technical Analyst and list the top 3 technical challenges.
+Step 2: Act as the Market Strategist and propose 3 growth strategies addressing those challenges.
+Step 3: Act as the Brand Voice and write the final campaign slogan and tagline based on Steps 1 and 2.
+</code></pre>
+
+<p><strong>Pro Tip:</strong> Define the interaction protocol clearly. Specify whether the roles should output sequentially or if they should debate internally before producing a final result. Sequential execution usually yields better clarity for the end-user, while internal debate yields more creative breakthroughs.</p>
+
+
+<h2>4. Constraint Cascading</h2>
+
+<p>Constraint Cascading is the art of breaking down complex limitations into a hierarchical sequence of filters. LLMs struggle when presented with a massive block of rules (e.g., "Write a poem that is 14 lines, rhymes ABCB, uses no words longer than 4 letters, and must be about winter"). Often, the model satisfies the first rule but forgets the fifth by the time it reaches the end. Constraint Cascading solves this by structuring the prompt so the model must satisfy the constraints layer by layer, validating each stage before moving to the next. This is analogous to a compiler checking syntax, then semantics, then style, rather than trying to do everything in one pass.</p>
+
+<p>This technique involves explicitly defining the constraints as a pipeline. The first instruction generates a draft that meets the primary structural constraints. The second instruction takes that output and applies secondary constraints. The final instruction polishes the result against the remaining stylistic or tonal constraints. This modular approach drastically reduces the probability of constraint violation. It is essential for legal document generation, code compliance, data formatting, and any scenario where strict adherence to rules is non-negotiable. It turns a chaotic set of requirements into a deterministic production line.</p>
+
+<p><strong>Before (Overloaded Prompt):</strong></p>
+<pre><code>
+Generate a Python script to sort a list of integers. The script must be under 20 lines, use only built-in functions, include comments for every line, handle empty lists gracefully, and print the result in reverse order.
+</code></pre>
+
+<p><strong>After (Constraint Cascaded Prompt):</strong></p>
+<pre><code>
+Task: Create a Python script to sort a list of integers in reverse order.
+Follow this cascade of constraints strictly:
+
+Phase 1: Write the core logic using only built-in `sorted()` and `reverse=True` arguments. Ignore comments and length for now.
+Phase 2: Add comments to every single line of code explaining the action.
+Phase 3: Add a specific check at the beginning of the script to handle empty lists (return an empty list if input is empty).
+Phase 4: Review the entire script. Ensure it is under 20 lines. If it exceeds this, remove redundant comments or inline the logic where safe.
+Phase 5: Output the final code block only.
+</code></pre>
+
+<p><strong>Pro Tip:</strong> Use numbering or phases to visually separate the constraints. The model performs better when it sees the constraints as a chronological workflow rather than a static list. Explicitly telling the model to "Review" or "Validate" at each stage reinforces the constraint checking behavior.</p>
+
+
+<h2>5. Output Format Anchoring</h2>
+
+<p>In the modern era of AI APIs and automated pipelines, the structure of the output is often as important as the content itself. Output Format Anchoring is the technique of rigidly defining the schema, tags, or structure that the model must adhere to. This is crucial for developers who need to parse AI responses programmatically without using regular expressions or complex post-processing logic. By anchoring the output to a specific format—such as JSON, XML, Markdown tables, or a specific template—the model acts as a reliable data transformer rather than a creative writer. This reduces error rates in downstream applications and ensures that every interaction with the model yields a consumable artifact.</p>
+
+<p>2026 tools have made this even more robust through the use of structured output instructions combined with schema validation concepts. You can instruct the model to adhere to a specific JSON schema or a strict HTML template. This is particularly useful for building chatbots that feed data into databases, generating API responses, or creating formatted reports. The key is to be explicit about delimiters, key names, and nesting levels. When the output format is anchored, the model's creativity is channeled entirely into the quality of the data within the structure, not the structure itself.</p>
+
+<p><strong>Before (Vague Format Request):</strong></p>
+<pre><code>
+Give me the data in a list format. Make sure it includes names and ages.
+</code></pre>
+
+<p><strong>After (Anchored Format Prompt):</strong></p>
+<pre><code>
+Extract the names and ages from the text below and output them strictly in the following JSON format. Do not include markdown code blocks (```) in the output. Ensure valid JSON syntax.
+
+{
+  "personnel": [
+    {
+      "name": "string",
+      "age": integer
+    }
+  ]
+}
+
+Text: "John is 25. Mary is 30. Bob is 45."
+Output:
+</code></pre>
+
+<p><strong>Pro Tip:</strong> If you are using an API, utilize the model's native "structured output" feature if available. If writing in the chat interface, explicitly forbid Markdown code blocks (```) if you want raw JSON, or explicitly request them if you want them for readability. Clarity on the delimiter is critical for programmatic parsing.</p>
+
+
+<h2>6. Negative Prompting</h2>
+
+<p>Negative prompting involves explicitly telling the model what *not* to do. While positive instructions guide the model toward a goal, negative instructions act as guardrails, preventing the model from drifting into common pitfalls, biases, or irrelevant tangents. In 2026, negative prompting is more sophisticated; instead of just saying "don't use slang," you might say "avoid colloquialisms, idioms, or overly simplistic metaphors that obscure technical meaning." This technique is vital for maintaining brand voice consistency, ensuring legal compliance (e.g., "do not make guarantees"), or preventing the model from hallucinating details that weren't in the source text.</p>
+
+<p>The effectiveness of negative prompting comes from defining the boundaries of the "no zone." By clearly delineating what is forbidden, you narrow the probability space of the model's generation. This is especially important when the model has a strong tendency toward a specific type of error, such as over-explaining, being too verbose, or hallucinating citations. Negative prompts act as a filter during the sampling process, pushing the model away from low-probability, undesirable patterns. It is a critical component of quality control in automated content generation systems.</p>
+
+<p><strong>Before (Positive Only):</strong></p>
+<pre><code>
+Write a formal email to a client explaining a delay. Be professional and concise.
+</code></pre>
+
+<p><strong>After (Negative Prompting Optimized):</strong></p>
+<pre><code>
+Write a formal email to a client explaining a project delay.
+Constraints:
+- Tone: Professional, empathetic, and solution-oriented.
+- Negative Constraints:
+  - Do NOT use phrases like "Unfortunately" or "Sorry" more than once.
+  - Do NOT make promises about future delivery dates unless explicitly stated in the source data.
+  - Do NOT use bullet points; use full paragraphs only.
+  - Do NOT include an apology for the delay itself, focus on the mitigation plan.
+  - Keep the email under 150 words.
+</code></pre>
+
+<p><strong>Pro Tip:</strong> Be specific about *why* you are imposing a negative constraint. For example, "Do not use slang because the audience is corporate legal counsel" helps the model understand the intent, which sometimes improves adherence compared to a blunt command.</p>
+
+
+<h2>7. Temperature-Aware Prompting</h2>
+
+<p>Temperature is a hyperparameter that controls the randomness of an LLM's output. A high temperature (e.g., 0.8) makes the model more creative and diverse but less consistent, while a low temperature (e.g., 0.2) makes it deterministic and focused but potentially repetitive. In 2026, "Temperature-Aware Prompting" means explicitly instructing the model to simulate a specific temperature setting within the prompt text, or dynamically adjusting the prompt's complexity to match the available temperature. Since many user interfaces do not expose the temperature slider directly, you must engineer the prompt to account for the stochastic nature of the generation.</p>
+
+<p>This technique involves using language that matches the desired temperature profile. If you need high creativity (high temp), you might prompt the model to "explore multiple divergent ideas" or "think outside the box." If you need precision (low temp), you prompt it to "follow the rules strictly," "provide only one correct answer," or "minimize variance." By aligning your linguistic instructions with the underlying probability distribution, you can get better results even if you don't have direct API control over the temperature parameter. This is essential for applications like brainstorming (high temp) vs. data extraction (low temp).</p>
+
+<p><strong>Before (Static Prompt):</strong></p>
+<pre><code>
+Generate 5 ideas for a new logo design.
+</code></pre>
+<p>*(Result might vary wildly in quality depending on the model's random seed.)*</p>
+
+<p><strong>After (Temperature-Aware Prompt):</strong></p>
+<pre><code>
+Context: We are operating in a "Low Temperature" mode (high precision, low variance).
+Task: Generate exactly 3 logo design concepts.
+Requirements:
+- All concepts must strictly follow the brand color palette: #0000FF and #FFFFFF.
+- Do not suggest any 3D elements.
+- Ensure the concepts are distinct but equally professional.
+- Do not use creative metaphors; describe the shapes and layouts literally.
+</code></pre>
+
+<p><strong>Pro Tip:</strong> If you have access to the API, always set the temperature based on the task: ~0.7 for creative writing and ~0.2 for logical or data tasks. If you only have the chat interface, use the "Temperature-Aware" phrasing above to force the model to simulate the appropriate behavior.</p>
+
+
+<h2>8. Context Window Optimization</h2>
+
+<p>As LLMs have grown, so have their context windows, but managing that context remains a critical skill. Context Window Optimization is the practice of packing the maximum amount of relevant information into the prompt while discarding noise, ensuring the model doesn't "forget" early instructions due to recency bias (where models pay more attention to the end of the prompt). In 2</p>
+
+
+<div class="cta-box">
+  <h2>Get 200+ Production-Ready Prompts</h2>
+  <p>Every prompt in our toolkit uses these exact techniques. RTFC framework, model-specific variants, fill-in-bracket templates.</p>
+  <a href="https://streamline501.gumroad.com/l/free-ai-prompts-sample" class="btn">Free Sample Pack →</a>
+  <a href="https://streamline501.gumroad.com/l/complete-ai-toolkit" class="btn outline">Full Toolkit ($79)</a>
+  <p style="margin-top:16px;font-size:14px">GitHub users: use code <span class="coupon">GITHUB20</span> for 20% off</p>
+</div>
+
+<hr>
+
+<p><strong>Related:</strong></p>
+<ul>
+  <li><a href="https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/complete-prompt-engineering-guide/">The Complete Prompt Engineering Guide</a></li>
+  <li><a href="https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/rtfc-vs-crispe-vs-race/">RTFC vs CRISPE vs RACE</a></li>
+  <li><a href="https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/ai-agent-prompt-engineering/">AI Agent Prompt Engineering</a></li>
+</ul>
+
+</div>
+</article>
+
+<footer>
+  Built by <a href="https://streamline501.gumroad.com">Streamline AI</a> · <a href="https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/">Home</a> · <a href="https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/">Blog</a>
+</footer>
+
+</body>
+</html>
