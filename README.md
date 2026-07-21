@@ -16,7 +16,7 @@
 
 **Stop guessing at prompts. Start building reproducible AI workflows with structured prompt engineering.**
 
-[Get the Full Collection →](https://streamline501.gumroad.com/l/complete-ai-toolkit) · [Free Sample →](https://streamline501.gumroad.com/l/free-ai-prompts-sample)
+[Get the Full Collection →](https://streamline501.gumroad.com/l/complete-ai-toolkit) · [Free Sample →](https://streamline501.gumroad.com/l/rtfc-free-guide)
 
 </div>
 
@@ -456,7 +456,7 @@ MIT License — use these prompts personally, commercially, however you want. At
 
 <div align="center">
 
-**[Get Premium Prompts](https://streamline501.gumroad.com/l/complete-ai-toolkit)** · **[Free Sample](https://streamline501.gumroad.com/l/free-ai-prompts-sample)** · **[All Products](https://streamline501.gumroad.com)**
+**[Get Premium Prompts](https://streamline501.gumroad.com/l/complete-ai-toolkit)** · **[Free Sample](https://streamline501.gumroad.com/l/rtfc-free-guide)** · **[All Products](https://streamline501.gumroad.com)**
 
 Built by [Streamline AI](https://streamline501.gumroad.com) · [Follow on GitHub](https://github.com/ic3bl3u-bit)
 
