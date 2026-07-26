@@ -1,0 +1,39 @@
+# llama-swap configuration for Qwen 3.6-35B-A3B on RTX 3090
+# Part of the 170 tok/s optimization project
+# Docs: https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/rtx-3090-170-tokens-per-second/
+
+models:
+  default:
+    # Standard profile: 65K context, MTP enabled, safe for 24GB RAM
+    cmd: |
+      llama-server --port ${PORT}
+        --model Qwen3.6-35B-A3B-UD-IQ4_XS.gguf
+        --mmproj mmproj-F16.gguf
+        -c 65536 -ngl 99 -fa on -b 1024 -ub 2048
+        -t 10 --cache-type-k q8_0 --cache-type-v turbo4
+        -fit off --no-mmap --mlock --jinja
+        --poll 100 --prio 2 --reasoning off -np 1
+        --spec-type draft-mtp --spec-draft-n-max 2
+
+  large-context:
+    # For long documents: 131K context, drops --mlock to avoid OOM
+    cmd: |
+      llama-server --port ${PORT}
+        --model Qwen3.6-35B-A3B-UD-IQ4_XS.gguf
+        --mmproj mmproj-F16.gguf
+        -c 131072 -ngl 99 -fa on -b 1024 -ub 2048
+        -t 10 --cache-type-k q8_0 --cache-type-v turbo4
+        -fit off --no-mmap --jinja
+        --poll 100 --prio 2 --reasoning off -np 1
+        --spec-type draft-mtp --spec-draft-n-max 2
+
+  no-mtp:
+    # For creative writing: MTP is net-neutral, disable for consistency
+    cmd: |
+      llama-server --port ${PORT}
+        --model Qwen3.6-35B-A3B-UD-IQ4_XS.gguf
+        --mmproj mmproj-F16.gguf
+        -c 65536 -ngl 99 -fa on -b 1024 -ub 2048
+        -t 10 --cache-type-k q8_0 --cache-type-v turbo4
+        -fit off --no-mmap --mlock --jinja
+        --poll 100 --prio 2 --reasoning off -np 1

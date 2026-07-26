@@ -444,6 +444,36 @@ Deep-dive content on prompt engineering, AI workflows, and the RTFC framework:
 
 ---
 
+## Local LLM Optimization Lab
+
+Beyond prompt engineering, we document real-world local LLM inference tuning. Our flagship benchmark: **170 tokens per second on a used RTX 3090 ($800)** with Qwen 3.6-35B-A3B — faster than every published benchmark for this hardware class.
+
+### Key Results
+
+| Metric | Value |
+|--------|-------|
+| Model | Qwen 3.6-35B-A3B (35B MoE, 3B active) |
+| Quantization | IQ4_XS (~17 GB) |
+| Peak speed (code) | 170 tok/s (bandwidth wall) |
+| Creative writing | 125 tok/s |
+| Hardware cost | $800 (used RTX 3090) |
+| Per-token cost | $0 |
+
+### Technical Reference
+
+- [Full config, flags & benchmark data →](https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/rtx-3090-170-tokens-per-second/) — Copy-pasteable llama.cpp build commands, server launch flags, llama-swap config, MTP speculative decoding benchmarks, and OOM crash analysis
+- [Full tuning diary on Medium →](https://medium.com/@ic3bl3u/how-i-pushed-an-rtx-3090-to-170-tokens-per-second-with-qwen-3-6-35b-a88079616d07) — The narrative: 3 weeks of tuning, debugging, and the crash that taught us what not to do
+
+### What's Covered
+
+- **MTP Speculative Decoding:** +21% speedup on code workloads (91% draft acceptance)
+- **llama.cpp Build Optimization:** Architecture-specific CUDA flags for Ampere (compute 8.6)
+- **OOM Crash Forensics:** Why 131K context + `--mlock` on 24GB RAM kills your process, and the fix
+- **Quantization Comparison:** IQ4_XS vs Q4_K_M vs Q5_K_M — speed/quality/VRAM tradeoffs
+- **Benchmark Comparison:** Our results vs 5 published benchmarks (we're #1 by 13-50%)
+
+---
+
 ## How to Contribute
 
 Found a great prompt? Submit a PR! See [CONTRIBUTING.md](CONTRIBUTING.md).

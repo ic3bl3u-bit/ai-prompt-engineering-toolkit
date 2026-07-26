@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Exact llama.cpp configuration, build flags, and benchmark data for running Qwen 3.6-35B-A3B at 170 tok/s on an RTX 3090. Copy-pasteable config files, llama-swap setup, and MTP speculative decoding settings.">
+<meta name="keywords" content="RTX 3090 llama.cpp config, Qwen 3.6 35B benchmark, llama-swap configuration, MTP speculative decoding, local LLM optimization, IQ4_XS quantization, llama.cpp build flags CUDA">
+<meta name="theme-color" content="#0a0a0f">
+<meta name="author" content="Streamline AI">
+<meta property="og:title" content="RTX 3090 at 170 tok/s: Complete Technical Configuration Reference">
+<meta property="og:description" content="Exact llama.cpp config, build flags, and benchmark data for 170 tok/s on RTX 3090 with Qwen 3.6-35B-A3B. Copy-pasteable configs included.">
+<meta property="og:url" content="https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/rtx-3090-170-tokens-per-second/">
+<meta property="og:type" content="article">
+<meta property="article:author" content="Streamline AI">
+<meta property="article:published_time" content="2026-07-26">
+<meta property="article:section" content="Local LLM Optimization">
+<meta property="article:tag" content="llama.cpp, RTX 3090, Qwen, Local LLM, GPU Optimization">
+<meta name="twitter:card" content="summary_large_image">
+<title>RTX 3090 170 tok/s: Technical Config & Benchmark Reference — Streamline AI</title>
+<link rel="canonical" href="https://medium.com/@ic3bl3u/how-i-pushed-an-rtx-3090-to-170-tokens-per-second-with-qwen-3-6-35b-a88079616d07">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%236366f1'/><text x='50' y='68' font-family='Inter,system-ui,sans-serif' font-size='52' font-weight='700' text-anchor='middle' fill='white'>S</text></svg>">
+<style>
+  :root{
+    --bg:#0a0a0f; --bg-2:#11111a; --bg-3:#181826; --border:#262635;
+    --text:#e8e8f0; --text-2:#9e9eaf; --text-3:#6f6f85;
+    --accent:#6366f1; --accent-hover:#7c7ff5; --accent-soft:rgba(99,102,241,.15);
+    --green:#22c55e; --red:#ef4444; --orange:#ff6b35; --cyan:#00ff88;
+    --radius:12px; --radius-lg:18px;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html{scroll-behavior:smooth}
+  body{background:linear-gradient(180deg, var(--bg) 0%, #0c0c14 100%); color:var(--text); font-family:var(--sans); line-height:1.7; font-size:17px; -webkit-font-smoothing:antialiased}
+  .container{max-width:820px; margin:0 auto; padding:0 24px}
+  nav{position:sticky; top:0; z-index:100; background:rgba(10,10,15,.85); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); padding:14px 0}
+  nav .inner{display:flex; align-items:center; justify-content:space-between; max-width:1100px; margin:0 auto; padding:0 24px}
+  nav .logo{font-weight:800; font-size:18px; color:var(--text); text-decoration:none; letter-spacing:-.02em}
+  nav .logo span{color:var(--accent)}
+  nav a.cta{background:var(--accent); color:#fff; text-decoration:none; padding:8px 18px; border-radius:8px; font-size:14px; font-weight:600; transition:.2s}
+  nav a.cta:hover{background:var(--accent-hover)}
+  article{padding:60px 0 80px}
+  .meta{color:var(--text-3); font-size:14px; margin-bottom:24px}
+  .tag{background:var(--accent-soft); color:var(--accent); padding:3px 10px; border-radius:6px; font-size:12px; font-weight:600; margin-right:8px}
+  h1{font-size:36px; font-weight:800; letter-spacing:-.03em; line-height:1.2; margin-bottom:16px}
+  h2{font-size:26px; font-weight:700; letter-spacing:-.02em; margin-top:48px; margin-bottom:16px; border-bottom:1px solid var(--border); padding-bottom:8px}
+  h3{font-size:20px; font-weight:600; margin-top:32px; margin-bottom:12px; color:var(--accent-hover)}
+  p{margin-bottom:18px}
+  strong{color:#fff; font-weight:600}
+  a{color:var(--accent); text-decoration:none}
+  a:hover{text-decoration:underline}
+  code{font-family:var(--mono); background:var(--bg-3); padding:2px 7px; border-radius:5px; font-size:14px; color:var(--accent-hover)}
+  pre{background:var(--bg-2); border:1px solid var(--border); border-radius:var(--radius); padding:20px 24px; overflow-x:auto; margin:20px 0 24px}
+  pre code{background:none; padding:0; color:var(--text); font-size:13.5px; line-height:1.6; white-space:pre}
+  blockquote{border-left:3px solid var(--accent); padding-left:20px; color:var(--text-2); font-style:italic; margin:24px 0}
+  table{width:100%; border-collapse:collapse; margin:24px 0; font-size:14px}
+  th{background:var(--bg-3); text-align:left; padding:12px 14px; border-bottom:2px solid var(--border); font-weight:600}
+  td{padding:12px 14px; border-bottom:1px solid var(--border); color:var(--text-2)}
+  tr:hover td{color:var(--text)}
+  td strong{color:var(--cyan)}
+  hr{border:none; border-top:1px solid var(--border); margin:48px 0}
+  .cta-box{background:var(--bg-2); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px; margin:40px 0; text-align:center}
+  .cta-box h2{margin-top:0; font-size:24px; border:none}
+  .cta-box p{color:var(--text-2); margin-bottom:20px}
+  .btn{display:inline-block; background:var(--accent); color:#fff; padding:12px 28px; border-radius:8px; font-weight:600; text-decoration:none; margin:4px; transition:.2s}
+  .btn:hover{background:var(--accent-hover); text-decoration:none}
+  .btn.outline{background:transparent; border:1px solid var(--border); color:var(--text)}
+  .btn.outline:hover{border-color:var(--accent); color:var(--accent)}
+  .stat-box{display:flex; gap:20px; flex-wrap:wrap; margin:32px 0}
+  .stat{flex:1; min-width:140px; background:var(--bg-2); border:1px solid var(--border); border-radius:var(--radius); padding:20px; text-align:center}
+  .stat .num{font-size:32px; font-weight:800; color:var(--cyan)}
+  .stat .label{font-size:13px; color:var(--text-3); margin-top:4px}
+  .warn{background:rgba(255,107,53,.1); border:1px solid var(--orange); border-radius:var(--radius); padding:16px 20px; margin:24px 0; font-size:15px}
+  .warn strong{color:var(--orange)}
+  @media(max-width:640px){h1{font-size:28px} h2{font-size:22px} body{font-size:16px} .container{padding:0 16px} .stat-box{flex-direction:column}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a href="https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/" class="logo">Streamline<span>AI</span></a>
+    <a href="https://streamline501.gumroad.com" class="cta">Get the Toolkit →</a>
+  </div>
+</nav>
+
+<article>
+<div class="container">
+
+<div class="meta">
+  <span class="tag">Local LLM</span>
+  <span class="tag">llama.cpp</span>
+  <span class="tag">RTX 3090</span>
+  July 26, 2026 · 10 min read
+</div>
+
+<h1>RTX 3090 at 170 tok/s: Complete Technical Configuration Reference</h1>
+
+<p>This is the technical companion to the full tuning diary: <a href="https://medium.com/@ic3bl3u/how-i-pushed-an-rtx-3090-to-170-tokens-per-second-with-qwen-3-6-35b-a88079616d07">How I Pushed an RTX 3090 to 170 Tokens Per Second With Qwen 3.6-35B</a>. The Medium article covers the narrative and crash analysis. This page is the copy-pasteable reference — every flag, config file, and benchmark number.</p>
+
+<div class="stat-box">
+  <div class="stat"><div class="num">170</div><div class="label">tok/s sustained (code)</div></div>
+  <div class="stat"><div class="num">125</div><div class="label">tok/s (creative writing)</div></div>
+  <div class="stat"><div class="num">$800</div><div class="label">total hardware cost</div></div>
+  <div class="stat"><div class="num">$0</div><div class="label">per-token cost</div></div>
+</div>
+
+<h2 id="hardware">Hardware Specification</h2>
+
+<table>
+  <tr><th>Component</th><th>Specification</th></tr>
+  <tr><td>CPU</td><td>Intel Core i9-10900K (10 cores, 20 threads, 3.70GHz)</td></tr>
+  <tr><td>System RAM</td><td>24GB DDR4 (WARNING: insufficient for 131K context + --mlock — see <a href="#oom-crash">OOM section</a>)</td></tr>
+  <tr><td>GPU</td><td>NVIDIA RTX 3090 24GB GDDR6X (Ampere, compute capability 8.6)</td></tr>
+  <tr><td>VRAM Bandwidth</td><td>936 GB/s (theoretical max: ~170 tok/s for this model)</td></tr>
+  <tr><td>OS</td><td>Windows 11 + WSL2 Ubuntu 26.04</td></tr>
+  <tr><td>CUDA</td><td>12.9</td></tr>
+  <tr><td>Driver</td><td>NVIDIA 610.62 (Studio)</td></tr>
+</table>
+
+<h2 id="software">Software Stack</h2>
+
+<table>
+  <tr><th>Component</th><th>Version</th><th>Purpose</th></tr>
+  <tr><td>llama.cpp</td><td>b9971 (turboquant fork)</td><td>Inference engine</td></tr>
+  <tr><td>Model</td><td>Qwen3.6-35B-A3B-UD-IQ4_XS.gguf</td><td>35B MoE, 3B active params</td></tr>
+  <tr><td>mmproj</td><td>mmproj-F16.gguf</td><td>Multimodal projector</td></tr>
+  <tr><td>llama-swap</td><td>Latest</td><td>Model routing (4 profiles)</td></tr>
+  <tr><td>Hermes Agent</td><td>v0.19.0</td><td>Agent framework</td></tr>
+</table>
+
+<h2 id="build">llama.cpp Build Command</h2>
+
+<p>Architecture-specific build for Ampere (compute 8.6). These flags produce native RTX 3090 machine code and enable all flash attention quantization paths:</p>
+
+<pre><code>cmake -B build \
+  -DGGML_CUDA=ON \
+  -DCMAKE_CUDA_ARCHITECTURES=86 \
+  -DGGML_CUDA_FA_ALL_QUANTS=ON \
+  -DGGML_NATIVE=ON \
+  -DGGML_LTO=ON \
+  -DGGML_CUDA_GRAPHS=ON \
+  -DGGML_CUDA_F16=ON
+
+cmake --build build --config Release -j 10</code></pre>
+
+<h3>Critical Build Flags Explained</h3>
+
+<table>
+  <tr><th>Flag</th><th>Why It Matters</th></tr>
+  <tr><td><code>CMAKE_CUDA_ARCHITECTURES=86</code></td><td>Emits native Ampere machine code. Without it, GPU JIT-compiles kernels at runtime (slower, suboptimal paths).</td></tr>
+  <tr><td><code>GGML_CUDA_FA_ALL_QUANTS=ON</code></td><td>Enables flash attention for ALL KV cache quantization formats. Without it, <code>--cache-type-k q8_0</code> forces slow fallback kernels.</td></tr>
+  <tr><td><code>GGML_CUDA_GRAPHS=ON</code></td><td>CUDA graph capture for reduced kernel launch overhead.</td></tr>
+  <tr><td><code>GGML_CUDA_F16=ON</code></td><td>Use FP16 accumulation for faster GPU computation where precision allows.</td></tr>
+</table>
+
+<div class="warn"><strong>Update first:</strong> Before tuning anything, update llama.cpp. Going from b9418 (May 2026) to b9971 (Jul 2026) gave a free <strong>11-20% speedup</strong> from kernel optimizations. This is the highest-ROI action.</div>
+
+<h2 id="launch-command">Server Launch Command</h2>
+
+<p>The complete, battle-tested launch command:</p>
+
+<pre><code>llama-server --port ${PORT} \
+  --model Qwen3.6-35B-A3B-UD-IQ4_XS.gguf \
+  --mmproj mmproj-F16.gguf \
+  -c 131072 -ngl 99 -fa on -b 1024 -ub 2048 \
+  -t 10 -tb 16 \
+  --cache-type-k q8_0 --cache-type-v turbo4 \
+  -fit off --no-mmap --mlock --jinja \
+  --poll 100 --prio 2 --reasoning off \
+  -np 1 \
+  --spec-type draft-mtp --spec-draft-n-max 2</code></pre>
+
+<h3>Flag-by-Flag Reference</h3>
+
+<table>
+  <tr><th>Flag</th><th>Value</th><th>Purpose</th></tr>
+  <tr><td><code>-ngl</code></td><td>99</td><td>All layers on GPU. No CPU offload = maximum speed.</td></tr>
+  <tr><td><code>-fa</code></td><td>on</td><td>Flash Attention. Non-negotiable for Ampere GPUs.</td></tr>
+  <tr><td><code>-c</code></td><td>131072</td><td>Context window. WARNING: reduce to 65536 if RAM &lt; 48GB.</td></tr>
+  <tr><td><code>-b</code></td><td>1024</td><td>Batch size. Tuned for 24GB VRAM budget.</td></tr>
+  <tr><td><code>-ub</code></td><td>2048</td><td>Micro batch for prompt processing chunk size.</td></tr>
+  <tr><td><code>-t</code></td><td>10</td><td>CPU threads (matching physical cores).</td></tr>
+  <tr><td><code>--cache-type-k</code></td><td>q8_0</td><td>Quantized K cache. Saves VRAM for longer context.</td></tr>
+  <tr><td><code>--cache-type-v</code></td><td>turbo4</td><td>TurboQuant V cache. Best speed-quality ratio.</td></tr>
+  <tr><td><code>--no-mmap</code></td><td>—</td><td>Eliminates page-fault jitter (prevents random speed drops from 150→80 tok/s).</td></tr>
+  <tr><td><code>--mlock</code></td><td>—</td><td>Locks model pages in RAM. Prevents swap degradation. Requires ≥48GB RAM.</td></tr>
+  <tr><td><code>--jinja</code></td><td>—</td><td>Jinja2 chat template processing. Required for agent frameworks using structured tool calls.</td></tr>
+  <tr><td><code>--reasoning</code></td><td>off</td><td>Disables thinking blocks. Saves tokens in agent workloads.</td></tr>
+  <tr><td><code>--spec-type</code></td><td>draft-mtp</td><td>MTP speculative decoding. +21% on code workloads.</td></tr>
+  <tr><td><code>--spec-draft-n-max</code></td><td>2</td><td>2-token draft window. Optimal acceptance/speed balance.</td></tr>
+</table>
+
+<h2 id="mtp">MTP Speculative Decoding Benchmarks</h2>
+
+<p>MTP (Multi-Token Prediction) uses a lightweight draft model to predict the next 1-2 tokens. The main model verifies them in a single forward pass.</p>
+
+<table>
+  <tr><th>Workload</th><th>Without MTP</th><th>With MTP</th><th>Speedup</th><th>Draft Acceptance</th></tr>
+  <tr><td>Code generation</td><td>126.7 tok/s</td><td><strong>169.7 tok/s</strong></td><td><strong>+21%</strong></td><td>91%</td></tr>
+  <tr><td>Creative writing</td><td>126.7 tok/s</td><td>125.3 tok/s</td><td>-1%</td><td>62%</td></tr>
+  <tr><td>Short responses (&lt;30 tok)</td><td>~120 tok/s</td><td>57.7 tok/s</td><td>-52%</td><td>100%</td></tr>
+</table>
+
+<blockquote><strong>Key insight:</strong> MTP is highly effective for predictable content (code, JSON, tool calls) but net-negative for creative writing and short responses. The draft model setup overhead exceeds savings on short outputs.</blockquote>
+
+<h3>Why n-gram Stacking Fails</h3>
+
+<p>Stacking n-gram speculative decoding alongside MTP was tested. The result: acceptance went up (62%→85% on creative) but speed went down (125→67 tok/s). Two competing draft engines generate redundant drafts that waste verification compute.</p>
+
+<p><strong>One good speculative engine beats two competing ones.</strong></p>
+
+<h2 id="sampling">Sampling Parameters (Agent Workloads)</h2>
+
+<pre><code>{
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "repetition_penalty": 1.05
+}</code></pre>
+
+<table>
+  <tr><th>Parameter</th><th>Value</th><th>Why</th></tr>
+  <tr><td>temperature</td><td>0.6</td><td>Lower (0.3) causes repetitive loops on multi-step reasoning. 0.6 explores more solution paths.</td></tr>
+  <tr><td>top_p</td><td>0.95</td><td>Wider candidate pool for format compliance.</td></tr>
+  <tr><td>top_k</td><td>20</td><td>Bounds the candidate pool.</td></tr>
+  <tr><td>repetition_penalty</td><td>1.05</td><td>Standard anti-repetition.</td></tr>
+</table>
+
+<h2 id="quantization">Quantization Comparison</h2>
+
+<table>
+  <tr><th>Quant</th><th>Size</th><th>Fits 24GB?</th><th>Speed</th><th>Quality</th></tr>
+  <tr><td><strong>IQ4_XS</strong></td><td>~17-18 GB</td><td>✅ (room for KV cache)</td><td><strong>170 tok/s</strong></td><td>Excellent</td></tr>
+  <tr><td>Q4_K_M</td><td>~18-19 GB</td><td>⚠️ Tight at 131K ctx</td><td>148 tok/s</td><td>Excellent</td></tr>
+  <tr><td>Q4_K_XL</td><td>~19-20 GB</td><td>⚠️ Very tight</td><td>135 tok/s</td><td>Excellent</td></tr>
+  <tr><td>Q5_K_M</td><td>~24-25 GB</td><td>❌ (CPU offload needed)</td><td>75 tok/s</td><td>Marginally better</td></tr>
+</table>
+
+<p>IQ4_XS from Unsloth's dynamic quantization gives the best speed-to-quality ratio for 24GB cards. The quality difference vs Q5_K_M is measurable on perplexity but invisible in real agent workloads.</p>
+
+<h2 id="benchmark-comparison">Benchmark Comparison: Published Results</h2>
+
+<p>Every documented benchmark we could find for this hardware + model combination:</p>
+
+<table>
+  <tr><th>Source</th><th>Quant</th><th>Speed</th><th>Notes</th></tr>
+  <tr><td><strong>This setup</strong></td><td>IQ4_XS + MTP</td><td><strong>169.7 tok/s</strong></td><td><strong>13-50% faster</strong></td></tr>
+  <tr><td>Japanese benchmark (zephel01)</td><td>IQ4_NL</td><td>149.8 tok/s</td><td>Different quant</td></tr>
+  <tr><td>Giles Thomas</td><td>UD-IQ4_NL_XL</td><td>140 tok/s</td><td>GPU-only mode</td></tr>
+  <tr><td>HN user (thc1006)</td><td>UD-Q4_K_XL</td><td>135.7 tok/s</td><td>No MTP</td></tr>
+  <tr><td>Reddit r/LocalLLaMA</td><td>unspecified</td><td>113 tok/s</td><td>Likely default settings</td></tr>
+  <tr><td>HF Discussion</td><td>UD-Q3_K_M</td><td>120 tok/s</td><td>Lighter quant</td></tr>
+</table>
+
+<h2 id="llama-swap">llama-swap Configuration</h2>
+
+<p>llama-swap routes requests to the correct model profile. This is the config structure for a 4-profile setup:</p>
+
+<pre><code># /home/game/.hermes/scripts/llama-swap-config.yaml
+models:
+  default:
+    cmd: |
+      llama-server --port ${PORT} \
+        --model Qwen3.6-35B-A3B-UD-IQ4_XS.gguf \
+        --mmproj mmproj-F16.gguf \
+        -c 65536 -ngl 99 -fa on -b 1024 -ub 2048 \
+        -t 10 --cache-type-k q8_0 --cache-type-v turbo4 \
+        -fit off --no-mmap --mlock --jinja \
+        --poll 100 --prio 2 --reasoning off -np 1 \
+        --spec-type draft-mtp --spec-draft-n-max 2
+
+  large-context:
+    cmd: |
+      llama-server --port ${PORT} \
+        --model Qwen3.6-35B-A3B-UD-IQ4_XS.gguf \
+        --mmproj mmproj-F16.gguf \
+        -c 131072 -ngl 99 -fa on -b 1024 -ub 2048 \
+        -t 10 --cache-type-k q8_0 --cache-type-v turbo4 \
+        -fit off --no-mmap --jinja \
+        --poll 100 --prio 2 --reasoning off -np 1 \
+        --spec-type draft-mtp --spec-draft-n-max 2
+
+  # Add additional profiles for other models as needed</code></pre>
+
+<div class="warn"><strong>Note:</strong> The default profile uses <code>-c 65536</code> (not 131072) to avoid OOM crashes on systems with &lt; 48GB RAM. The large-context profile drops <code>--mlock</code> for the same reason.</div>
+
+<h2 id="oom-crash">OOM Crash Analysis & Fix</h2>
+
+<h3>What Happens at 131K Context + --mlock on 24GB RAM</h3>
+
+<table>
+  <tr><th>Resource</th><th>Value at Crash</th></tr>
+  <tr><td>llama-server anon-RSS</td><td><strong>19,986 MB (~20 GB)</strong></td></tr>
+  <tr><td>llama-server shmem-RSS</td><td>1,183 MB (~1.1 GB)</td></tr>
+  <tr><td>Total system RAM</td><td>24 GB</td></tr>
+  <tr><td>Swap</td><td>100% full (2 GB, 0 free)</td></tr>
+  <tr><td>Free RAM at crash</td><td>~122 MB</td></tr>
+</table>
+
+<p>The kernel OOM killer selected llama-server (highest RSS). Three interacting causes:</p>
+
+<ol>
+  <li><strong>131K KV cache:</strong> q8_0 K cache + turbo4 V cache at 131,072 tokens = 4-6 GB on top of model weights.</li>
+  <li><strong><code>--mlock</code> pinned pages:</strong> Forces all model pages into resident RAM. Cannot be evicted.</li>
+  <li><strong>VRAM spillover:</strong> Some tensors spill to system RAM. With <code>--mlock</code>, those are pinned too.</li>
+</ol>
+
+<p><strong>Math:</strong> 17-18 GB model weights + 4-6 GB KV cache + 1-2 GB overhead = 24+ GB. Zero headroom.</p>
+
+<h3>The Fix</h3>
+
+<table>
+  <tr><th>Fix</th><th>Action</th><th>Effect</th></tr>
+  <tr><td>Context reduction</td><td><code>-c 65536</code> for default profile</td><td>Frees 2-3 GB KV cache memory</td></tr>
+  <tr><td>Drop --mlock on large ctx</td><td>Only use --mlock with -c 65536</td><td>Allows OS to manage pages</td></tr>
+  <tr><td>Add RAM (definitive)</td><td>+32GB → 56GB total</td><td>Eliminates OOM at any context</td></tr>
+</table>
+
+<h2 id="context-optimization">Agent Framework Context Optimization</h2>
+
+<p>Token savings per turn by optimizing the agent framework config:</p>
+
+<table>
+  <tr><th>Optimization</th><th>Tokens Saved</th></tr>
+  <tr><td>Renamed large AGENTS.md to .bak</td><td>~18,000</td></tr>
+  <tr><td>Dropped kanban toolset (12 tools)</td><td>~6,000</td></tr>
+  <tr><td>protect_last_n 30 → 12</td><td>~10,000-15,000</td></tr>
+  <tr><td>Disabled unused plugins</td><td>~2,000</td></tr>
+  <tr><td>Split monolithic config</td><td>~3,000</td></tr>
+  <tr><td><strong>Total</strong></td><td><strong>~39,000-44,000 tokens/turn</strong></td></tr>
+</table>
+
+<h2 id="hardware-guide">Hardware Tier Guide (July 2026 Prices)</h2>
+
+<table>
+  <tr><th>Budget</th><th>Hardware</th><th>Max Model</th><th>Expected Speed</th></tr>
+  <tr><td>$800-900</td><td>Used RTX 3090 24GB</td><td>35B MoE at Q4</td><td><strong>150-170 tok/s</strong></td></tr>
+  <tr><td>$1,500-1,600</td><td>RTX 4090 24GB</td><td>35B MoE at Q4</td><td>180-220 tok/s</td></tr>
+  <tr><td>$2,500</td><td>RTX 5090 32GB</td><td>70B at Q4</td><td>60-80 tok/s</td></tr>
+  <tr><td>$1,500</td><td>AMD Ryzen AI Max+ 395</td><td>70B at Q4 (shared RAM)</td><td>12-15 tok/s</td></tr>
+</table>
+
+<p><strong>RAM recommendation:</strong> Whatever GPU you choose, get at least 48GB system RAM. 24GB system RAM is not enough for 131K context with <code>--mlock</code>.</p>
+
+<h2 id="remaining-headroom">Remaining Headroom: The Last 10%</h2>
+
+<table>
+  <tr><th>Area</th><th>Potential</th><th>Notes</th></tr>
+  <tr><td>WSL2 virtualization overhead</td><td>5-10%</td><td>Native Ubuntu could reach 180-187 tok/s</td></tr>
+  <tr><td>Thread tuning (-t 1 or -t 2)</td><td>3-8%</td><td>GPU-bound workloads need fewer CPU threads</td></tr>
+  <tr><td>KV cache precision (q4_0)</td><td>Variable</td><td>10x faster prompt processing, needs quality testing</td></tr>
+  <tr><td>Draft window (n-max 3-4)</td><td>0-5%</td><td>Only if acceptance stays &gt;85%</td></tr>
+</table>
+
+<hr>
+
+<div class="cta-box">
+  <h2>Read the Full Story</h2>
+  <p>This page is the technical reference. The full tuning diary — with the narrative, the debugging process, and what I'd do differently — is on Medium.</p>
+  <a href="https://medium.com/@ic3bl3u/how-i-pushed-an-rtx-3090-to-170-tokens-per-second-with-qwen-3-6-35b-a88079616d07" class="btn">Read on Medium →</a>
+  <a href="https://streamline501.gumroad.com" class="btn outline">Get the Toolkit</a>
+</div>
+
+<p style="text-align:center; color:var(--text-3); font-size:14px; margin-top:40px;">
+  All benchmarks measured July 25-26, 2026 · llama.cpp b9971 · Qwen3.6-35B-A3B IQ4_XS · RTX 3090 · CUDA 12.9 · Hermes Agent v0.19.0
+</p>
+
+</div>
+</article>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"TechArticle",
+  "headline":"RTX 3090 at 170 tok/s: Complete Technical Configuration Reference",
+  "description":"Exact llama.cpp configuration, build flags, and benchmark data for running Qwen 3.6-35B-A3B at 170 tok/s on an RTX 3090.",
+  "author":{"@type":"Organization","name":"Streamline AI"},
+  "datePublished":"2026-07-26",
+  "about":["llama.cpp","RTX 3090","Qwen 3.6","Local LLM","GPU Optimization"],
+  "isPartOf":{"@type":"Blog","name":"Streamline AI Blog"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"How do I get 170 tokens per second on RTX 3090?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Use Qwen 3.6-35B-A3B (MoE architecture, 3B active params) with IQ4_XS quantization, llama.cpp b9971 with CUDA architecture 86 build flags, flash attention enabled, and MTP speculative decoding (--spec-type draft-mtp --spec-draft-n-max 2). The theoretical maximum for this model on RTX 3090 is ~170 tok/s (936 GB/s bandwidth / ~5.5 bytes per token)."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"What is MTP speculative decoding?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"MTP (Multi-Token Prediction) uses a lightweight draft model to predict the next 1-2 tokens. The main model verifies them in a single forward pass. On code workloads, draft acceptance is 91%, yielding a 21% net speedup. On creative writing, it is net-neutral. Enable with --spec-type draft-mtp --spec-draft-n-max 2."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Why does llama-server crash with 131K context?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"The KV cache at 131,072 tokens with q8_0 K cache consumes 4-6 GB on top of model weights. Combined with --mlock (which pins all pages in RAM), total memory exceeds 24GB on systems with less than 48GB RAM, triggering the kernel OOM killer. Fix: reduce context to 65536 for default use, or upgrade to 56GB+ system RAM."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"What quantization is best for RTX 3090?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"IQ4_XS (~17-18 GB) is the best speed-to-quality ratio for 24GB VRAM cards. It fits entirely in VRAM with room for KV cache. Q4_K_M is slightly larger but also excellent. Q5_K_M requires CPU offload on 24GB cards and drops speed to ~75 tok/s."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Where can I find the full llama.cpp configuration for RTX 3090?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"The complete launch command, build flags, llama-swap config, and benchmark comparison are documented in this technical reference: https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/rtx-3090-170-tokens-per-second/"
+      }
+    }
+  ]
+}
+</script>
+
+</body>
+</html>

@@ -104,4 +104,16 @@
     <priority>0.9</priority>
     <lastmod>2026-07-21</lastmod>
   </url>
+  <url>
+    <loc>https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/rtx-3090-170-tokens-per-second/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2026-07-26</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/ic3bl3u-bit/ai-prompt-engineering-toolkit/tree/main/configs</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-07-26</lastmod>
+  </url>
 </urlset>
