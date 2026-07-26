@@ -73,7 +73,11 @@
   footer{border-top:1px solid var(--border); padding:30px 0; text-align:center; color:var(--text-3); font-size:14px}
   footer a{color:var(--accent); text-decoration:none}
   @media(max-width:640px){ .header h1{font-size:28px} .wrap{padding:0 16px} .post-card{padding:20px} }
-</style>
+
+  .cat-btn{cursor:pointer;transition:.2s}
+  .cat-btn:hover{background:var(--accent-soft)!important;color:var(--accent)!important}
+  .cat-btn.active{background:var(--accent)!important;color:#fff!important;border-color:var(--accent)!important}
+  </style>
 </head>
 <body>
 
@@ -188,6 +192,59 @@
 <footer>
   <div>Built by <a href="https://streamline501.gumroad.com">Streamline AI</a> · 2026</div>
 </footer>
+
+
+  <script>
+    // Category data for filtering
+    const postCategories = {
+      'rtfc-framework-explained': ['rtfc'],
+      'rtfc-vs-crispe-vs-race': ['rtfc'],
+      'complete-prompt-engineering-guide': ['rtfc'],
+      'system-prompt-vs-user-prompt': ['rtfc'],
+      'chatgpt-prompt-engineering-advanced': ['rtfc'],
+      'best-chatgpt-prompts-marketing-teams': ['marketing'],
+      '50-ai-prompts-for-business': ['marketing'],
+      'sell-ai-prompts-online': ['marketing'],
+      'zero-ad-spend-playbook': ['marketing'],
+      'best-ai-prompt-packs-compared': ['marketing'],
+      'prompt-injection-security': ['security'],
+      'aeo-ai-search-prompts-2026': ['security'],
+      'rtx-3090-170-tokens-per-second': ['local-llm'],
+      'ai-agent-prompt-engineering': ['ai-agents'],
+    };
+
+    function filterPosts(category) {
+      const cards = document.querySelectorAll('.post-card');
+      cards.forEach(card => {
+        const href = card.getAttribute('href') || '';
+        const slug = href.split('/').pop().replace(/\/$/, '');
+        const cats = postCategories[slug] || [];
+        
+        if (category === 'all' || cats.includes(category)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      
+      // Update active state
+      document.querySelectorAll('.cat-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('href') === '#' + category) {
+          btn.classList.add('active');
+        }
+      });
+    }
+
+    // Handle hash-based filtering
+    window.addEventListener('hashchange', () => {
+      const cat = location.hash.replace('#', '') || 'all';
+      filterPosts(cat);
+    });
+
+    // Initial filter
+    filterPosts('all');
+  </script>
 
 </body>
 </html>
