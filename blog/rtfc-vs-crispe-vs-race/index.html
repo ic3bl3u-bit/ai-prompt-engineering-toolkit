@@ -72,7 +72,45 @@
     h1{font-size:28px} h2{font-size:22px} body{font-size:16px}
     .container{padding:0 16px}
   }
-</style>
+
+    .related-posts{background:var(--bg-2); border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px 32px; margin:40px 0}
+    .related-posts h3{font-size:1.15rem; margin:0 0 16px; color:var(--text)}
+    .related-posts ul{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px}
+    .related-posts li a{color:var(--accent); text-decoration:none; font-size:.95rem; line-height:1.5; transition:color .15s}
+    .related-posts li a:hover{color:var(--accent-hover)}
+    .related-posts li a::before{content:"→ "; color:var(--text-3); transition:color .15s}
+    .related-posts li a:hover::before{color:var(--accent)}
+  </style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "RTFC vs CRISPE vs RACE",
+  "description": "RTFC vs CRISPE vs RACE: We tested all three prompt frameworks on the same task. Here's which one actually produces production-ready output.",
+  "datePublished": "2026-07-07",
+  "dateModified": "2026-07-07",
+  "author": {
+    "@type": "Organization",
+    "name": "Streamline AI",
+    "url": "https://streamline501.gumroad.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Streamline AI",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/social-preview.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/rtfc-vs-crispe-vs-race/"
+  },
+  "url": "https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/rtfc-vs-crispe-vs-race/",
+  "image": "https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/social-preview.png"
+}
+  </script>
 </head>
 <body>
 
@@ -231,11 +269,21 @@ raised a Series A round. Goal: schedule a 15-minute discovery call.
   <h2>Ready to Standardize Your AI Workflow?</h2>
   <p>We've open-sourced our RTFC framework with 200+ pre-built templates.</p>
   <a href="https://github.com/ic3bl3u-bit/ai-prompt-engineering-toolkit" class="btn">Get Free Templates on GitHub</a>
-  <a href="https://streamline501.gumroad.com" class="btn outline">Browse Premium Packs</a>
+  <a href="https://streamline501.gumroad.com/l/complete-ai-toolkit" class="btn outline">Browse Premium Packs</a>
   <p style="margin-top:16px; font-size:14px; color:var(--text-3)">Use coupon <span class="coupon">GITHUB20</span> for 20% off any premium pack.</p>
 </div>
 
 </div>
+
+<div class="related-posts">
+<h3>Related Articles</h3>
+<ul>
+<li><a href="https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/rtfc-framework-explained/">RTFC Framework Explained: Role, Task, Format, Constraints</a></li>
+<li><a href="https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/complete-prompt-engineering-guide/">The Complete Prompt Engineering Guide (2026)</a></li>
+<li><a href="https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/system-prompt-vs-user-prompt/">System Prompt vs User Prompt (2026 Guide)</a></li>
+</ul>
+</div>
+
 </article>
 
 </body>

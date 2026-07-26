@@ -88,9 +88,16 @@
   <div class="header">
     <h1>Blog</h1>
     <p>Prompt engineering deep dives, framework comparisons, and AI automation tactics.</p>
+    <div class="cat-nav" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px">
+      <a href="#all" class="cat-btn" style="background:var(--accent-soft);color:var(--accent);padding:6px 14px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none">All Posts</a>
+      <a href="#rtfc" class="cat-btn" style="background:var(--bg-3);color:var(--text-2);padding:6px 14px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;border:1px solid var(--border)">RTFC Framework</a>
+      <a href="#marketing" class="cat-btn" style="background:var(--bg-3);color:var(--text-2);padding:6px 14px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;border:1px solid var(--border)">Marketing</a>
+      <a href="#security" class="cat-btn" style="background:var(--bg-3);color:var(--text-2);padding:6px 14px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;border:1px solid var(--border)">Security</a>
+      <a href="#local-llm" class="cat-btn" style="background:var(--bg-3);color:var(--text-2);padding:6px 14px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;border:1px solid var(--border)">Local LLM</a>
+    </div>
   </div>
 
-  <div class="post-list">
+  <div class="post-list" id="all">
     <a class="post-card" href="/ai-prompt-engineering-toolkit/blog/best-chatgpt-prompts-marketing-teams/" style="border-color:var(--accent)">
       <span class="tag" style="background:var(--accent);color:#fff">★ New</span>
       <h2>Best ChatGPT Prompts for Marketing Teams in 2026: Tested & Ranked</h2>

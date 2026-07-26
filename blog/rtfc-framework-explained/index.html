@@ -67,7 +67,15 @@
   .bad{color:var(--red)}
   .good{color:var(--green)}
   @media(max-width:640px){h1{font-size:28px} h2{font-size:22px} body{font-size:16px} .container{padding:0 16px}}
-</style>
+
+    .related-posts{background:var(--bg-2); border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px 32px; margin:40px 0}
+    .related-posts h3{font-size:1.15rem; margin:0 0 16px; color:var(--text)}
+    .related-posts ul{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px}
+    .related-posts li a{color:var(--accent); text-decoration:none; font-size:.95rem; line-height:1.5; transition:color .15s}
+    .related-posts li a:hover{color:var(--accent-hover)}
+    .related-posts li a::before{content:"→ "; color:var(--text-3); transition:color .15s}
+    .related-posts li a:hover::before{color:var(--accent)}
+  </style>
 </head>
 <body>
 
@@ -215,7 +223,7 @@ for a SaaS tool that helps agencies automate client reporting.
   <h2>Get 500+ More Prompts</h2>
   <p>The full toolkit has 200+ production-ready prompts using RTFC across 15 categories.</p>
   <a href="https://github.com/ic3bl3u-bit/ai-prompt-engineering-toolkit" class="btn">Free Sample on GitHub</a>
-  <a href="https://streamline501.gumroad.com" class="btn outline">Browse Premium Packs</a>
+  <a href="https://streamline501.gumroad.com/l/complete-ai-toolkit" class="btn outline">Browse Premium Packs</a>
   <p style="margin-top:16px; font-size:14px; color:var(--text-3)">Use coupon <span class="coupon">GITHUB20</span> for 20% off.</p>
 </div>
 
@@ -239,6 +247,16 @@ for a SaaS tool that helps agencies automate client reporting.
 <p>Check out our <a href="../50-ai-prompts-for-business/">50 AI Prompts for Business</a> guide, our <a href="../ai-agent-prompt-engineering/">AI Agent Prompt Engineering</a> deep dive, or browse the <a href="https://github.com/ic3bl3u-bit/ai-prompt-engineering-toolkit">free templates on GitHub</a>.</p>
 
 </div>
+
+<div class="related-posts">
+<h3>Related Articles</h3>
+<ul>
+<li><a href="https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/rtfc-vs-crispe-vs-race/">RTFC vs CRISPE vs RACE — Which Framework Actually Works?</a></li>
+<li><a href="https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/complete-prompt-engineering-guide/">The Complete Prompt Engineering Guide (2026)</a></li>
+<li><a href="https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/system-prompt-vs-user-prompt/">System Prompt vs User Prompt (2026 Guide)</a></li>
+</ul>
+</div>
+
 </article>
 
 <script type="application/ld+json">
