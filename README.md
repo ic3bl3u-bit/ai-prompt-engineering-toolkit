@@ -431,7 +431,7 @@ These 15 prompts are samples. The full toolkit includes **200+ prompts across 6 
 | **Ultimate Launch Bundle (all 15)** | **$97** | **$435 value (78% off)** |
 | Team License (5 seats) | $149 | For agencies & teams |
 
-**GitHub users get 20% off with code `GITHUB20`.**
+**GitHub users get 20% off with code `LAUNCH20`.**
 
 Every system includes PDF + plain text, quick-start guide, lifetime updates, and commercial use license.
 

@@ -209,4 +209,4 @@ The full collection includes:
 - Brand voice guides
 - Influencer outreach templates
 
-[→ Marketing Bundle — 3 Systems ($47)](https://streamline501.gumroad.com/l/marketing-bundle) · [Free Sample](https://streamline501.gumroad.com/l/rtfc-free-guide) · Use code `GITHUB20` for 20% off
+[→ Marketing Bundle — 3 Systems ($47)](https://streamline501.gumroad.com/l/marketing-bundle) · [Free Sample](https://streamline501.gumroad.com/l/rtfc-free-guide) · Use code `LAUNCH20` for 20% off

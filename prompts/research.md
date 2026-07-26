@@ -183,4 +183,4 @@ The full collection includes:
 - Literature gap identification
 - Survey design & analysis
 
-[→ Research & Analysis System ($29)](https://streamline501.gumroad.com/l/research-analysis-prompts) · [Free Sample](https://streamline501.gumroad.com/l/rtfc-free-guide) · Use code `GITHUB20` for 20% off
+[→ Research & Analysis System ($29)](https://streamline501.gumroad.com/l/research-analysis-prompts) · [Free Sample](https://streamline501.gumroad.com/l/rtfc-free-guide) · Use code `LAUNCH20` for 20% off
