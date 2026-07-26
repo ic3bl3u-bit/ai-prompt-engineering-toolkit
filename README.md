@@ -1,24 +1,35 @@
 <div align="center">
 
-<img src="social-preview.png" alt="AI Prompt Engineering Toolkit" width="100%">
+<img src="social-preview.png" alt="AI Prompt Engineering Toolkit — 200+ RTFC prompts" width="100%">
 
 # AI Prompt Engineering Toolkit
 
-### A structured prompt engineering system based on the RTFC methodology — multi-model, reusable, and designed for reproducible AI workflows
+### 200+ production-ready AI prompts built on the RTFC framework. Copy, paste, get results — works with ChatGPT, Claude, Gemini, and any LLM.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Prompts](https://img.shields.io/badge/Prompts-200+-blue.svg)](https://streamline501.gumroad.com)
 [![Categories](https://img.shields.io/badge/Categories-15-orange.svg)](https://streamline501.gumroad.com)
-[![Works with ChatGPT](https://img.shields.io/badge/Works%20with-ChatGPT-green.svg)](https://streamline501.gumroad.com)
-[![Works with Claude](https://img.shields.io/badge/Works%20with-Claude-green.svg)](https://streamline501.gumroad.com)
-[![Works with Gemini](https://img.shields.io/badge/Works%20with-Gemini-green.svg)](https://streamline501.gumroad.com)
-[![Discussions](https://img.shields.io/badge/Discussions-Active-purple.svg)](https://github.com/ic3bl3u-bit/ai-prompt-engineering-toolkit/discussions)
+[![Last Commit](https://img.shields.io/github/last-commit/ic3bl3u-bit/ai-prompt-engineering-toolkit)](https://github.com/ic3bl3u-bit/ai-prompt-engineering-toolkit)
+[![Discussions](https://img.shields.io/badge/Discussions-Join-purple.svg)](https://github.com/ic3bl3u-bit/ai-prompt-engineering-toolkit/discussions)
 
-**Stop guessing at prompts. Start building reproducible AI workflows with structured prompt engineering.**
+**⭐ If this toolkit saves you time, star the repo — it helps others discover it.**
 
-[Get the Full Collection →](https://streamline501.gumroad.com/l/complete-ai-toolkit) · [Free Sample →](https://streamline501.gumroad.com/l/rtfc-free-guide)
+[Get 200+ Prompts →](https://streamline501.gumroad.com/l/complete-ai-toolkit) · [Free Sample →](https://streamline501.gumroad.com/l/rtfc-free-guide)
 
 </div>
+
+---
+
+## Quick Start
+
+**60 seconds to your first result:**
+
+1. Pick any prompt below 👇
+2. Copy it
+3. Paste into ChatGPT, Claude, Gemini, or any AI
+4. Replace the `[bracketed text]` with your details
+
+No setup. No dependencies. No technical skills required.
 
 ---
 
@@ -38,14 +49,11 @@ This isn't a static PDF of one-liners. It's a prompt engineering system with:
 
 ---
 
-## Quick Start
+## The RTFC Difference
 
-1. Pick any prompt below
-2. Copy it
-3. Paste into ChatGPT, Claude, Gemini, or any AI
-4. Replace the `[bracketed text]` with your details
+<img src="rtfc-before-after.png" alt="RTFC Framework before and after comparison — generic prompt vs structured RTFC prompt" width="100%">
 
-No setup. No dependencies. No technical skills required.
+**R**ole → **T**ask → **F**ormat → **C**onstraints. Four ingredients that turn vague requests into production-ready AI outputs.
 
 ---
 
@@ -484,10 +492,22 @@ MIT License — use these prompts personally, commercially, however you want. At
 
 ---
 
+## Star History
+
+<a href="https://star-history.com/#ic3bl3u-bit/ai-prompt-engineering-toolkit&Date">
+ <img align="center" src="https://api.star-history.com/svg?repos=ic3bl3u-bit/ai-prompt-engineering-toolkit&type=Date" alt="Star History Chart" width="600">
+</a>
+
+<br>
+
+⭐ **Star this repo** to help others discover it and to support continued development.
+
+---
+
 <div align="center">
 
-**[Get Premium Prompts](https://streamline501.gumroad.com/l/complete-ai-toolkit)** · **[Free Sample](https://streamline501.gumroad.com/l/rtfc-free-guide)** · **[All Products](https://streamline501.gumroad.com)**
+**[Get 200+ Prompts →](https://streamline501.gumroad.com/l/complete-ai-toolkit)** · **[Free Sample →](https://streamline501.gumroad.com/l/rtfc-free-guide)** · **[All Products →](https://streamline501.gumroad.com)**
 
-Built by [Streamline AI](https://streamline501.gumroad.com) · [Follow on GitHub](https://github.com/ic3bl3u-bit)
+Built by [Streamline AI](https://streamline501.gumroad.com) · [⭐ Star](https://github.com/ic3bl3u-bit/ai-prompt-engineering-toolkit) · [💬 Discuss](https://github.com/ic3bl3u-bit/ai-prompt-engineering-toolkit/discussions) · [Follow on GitHub](https://github.com/ic3bl3u-bit)
 
 </div>
