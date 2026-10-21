@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
 Sitemap: https://github.com/ic3bl3u-bit/ai-prompt-engineering-toolkit/raw/main/sitemap.xml
+# LLM/AEO index for AI assistants and search engines
+llms.txt: https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/llms.txt

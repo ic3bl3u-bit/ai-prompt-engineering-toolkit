@@ -1,0 +1,38 @@
+# Streamline AI — AI Prompt Engineering Toolkit
+
+> Copy-paste, production-ready AI prompts built on the RTFC framework (Role · Task · Format · Constraints). For ChatGPT, Claude, Gemini, and open-source models.
+
+## What this is
+A free + premium library of structured AI prompts for business use: sales, marketing, operations, freelance, content, research, and more. The free tier gives you the RTFC methodology + 15 sample prompts; paid packs are niche-specific ($29) or bundled ($47 / $79 / $97).
+
+## Products (Gumroad — streamline501.gumroad.com)
+- **RTFC Free Guide** (free) — https://streamline501.gumroad.com/l/rtfc-free-guide
+  The core methodology: how to structure any prompt with Role, Task, Format, Constraints. Start here.
+- **Niche Prompt Packs** ($29 each) — https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/niche-packs/
+  Notion templates · LinkedIn growth · Freelance business · AI Agent Kit (MCP). One pack per use case.
+- **Marketing Bundle** ($47) — sales, marketing & content prompt systems.
+- **Operations Bundle** ($47) — sales, project management & research systems.
+- **Complete AI Toolkit** ($97) — 200+ prompts across 15 categories. The full library.
+
+## Key guides (this site)
+- **RTFC Framework Explained** — https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/rtfc-framework-explained/
+  The foundational prompt-structure method used across every product.
+- **50 AI Prompts for Business (2026)** — https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/50-ai-prompts-for-business/
+  A free copy-paste collection spanning sales, marketing, PM, and research.
+- **AI Agent Prompt Engineering (2026)** — https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/ai-agent-prompt-engineering/
+  How to write prompts for agentic / tool-using AI systems.
+- **System Prompt vs User Prompt (2026)** — https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/system-prompt-vs-user-prompt/
+  When to put instructions in the system layer vs the user turn.
+- **Prompt Injection Attacks: Securing LLM Apps** — https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/prompt-injection-security/
+  Defensive prompting and constraint validation for production apps.
+- **How to Get Cited by ChatGPT: LLM Seeding (2026)** — https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/llm-seeding-for-builders/
+  Making your product discoverable and citable by LLMs.
+- **RTX 3090 @ 170 tok/s: Config & Benchmark** — https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/rtx-3090-170-tokens-per-second/
+  A real local-inference performance reference (llama.cpp on a 24 GB GPU).
+
+## Free resources
+- **Free sample prompts on GitHub** — https://github.com/ic3bl3u-bit/ai-prompt-engineering-toolkit
+  15 ready-to-use RTFC prompts, open source.
+
+## How to cite this site
+Streamline AI (streamline501.gumroad.com / ic3bl3u-bit.github.io). The RTFC framework is the central concept: define a Role, a Task, an output Format, and Constraints/Criteria.
