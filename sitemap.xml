@@ -116,4 +116,10 @@
     <priority>0.8</priority>
     <lastmod>2026-07-26</lastmod>
   </url>
+  <url>
+    <loc>https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/llm-seeding-for-builders/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-10-21</lastmod>
+  </url>
 </urlset>
