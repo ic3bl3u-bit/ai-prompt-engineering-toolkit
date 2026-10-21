@@ -190,4 +190,4 @@ The full collection includes:
 - Time audit and optimization
 - Delegation frameworks
 
-[→ Project Management System ($29)](https://streamline501.gumroad.com/l/project-management-prompts) · [Free Sample](https://streamline501.gumroad.com/l/rtfc-free-guide) · Use code `LAUNCH20` for 20% off
+[→ Operations AI System — Sales, PM & Research ($47)](https://streamline501.gumroad.com/l/operations-bundle) · [Free Sample](https://streamline501.gumroad.com/l/rtfc-free-guide) · Use code `LAUNCH20` for 20% off
