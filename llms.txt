@@ -12,7 +12,7 @@ A free + premium library of structured AI prompts for business use: sales, marke
   Notion templates · LinkedIn growth · Freelance business · AI Agent Kit (MCP). One pack per use case.
 - **Marketing Bundle** ($47) — sales, marketing & content prompt systems.
 - **Operations Bundle** ($47) — sales, project management & research systems.
-- **Complete AI Toolkit** ($97) — 200+ prompts across 15 categories. The full library.
+- **Complete AI Toolkit** ($97) — 500+ prompts across 15 categories. The full library.
 
 ## Key guides (this site)
 - **RTFC Framework Explained** — https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/blog/rtfc-framework-explained/
