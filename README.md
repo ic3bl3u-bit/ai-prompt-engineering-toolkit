@@ -435,7 +435,7 @@ These 15 prompts are samples. The full toolkit includes **200+ prompts across 6 
 
 Every system includes PDF + plain text, quick-start guide, lifetime updates, and commercial use license.
 
-→ [Browse All Products](https://streamline501.gumroad.com)
+→ [Browse All Products](https://streamline501.gumroad.com) · → [Niche Prompt Packs (Notion / LinkedIn / Freelance / MCP)](https://ic3bl3u-bit.github.io/ai-prompt-engineering-toolkit/niche-packs/)
 
 ---
 
